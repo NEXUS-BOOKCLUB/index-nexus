@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nexus Admin Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+
+<div class="logo">
+
+
+<img src="assets/logo.jpeg" alt="Nexus Logo">
+
+
+<div>
+
+<h2>NEXUS</h2>
+
+<span>Admin Dashboard</span>
+
+</div>
+
+
+</div>
+
+
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="discussion.html">Discussion</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+<main>
+
+
+<section class="admin-section">
+
+
+<div class="container">
+
+
+<h1>Nexus Content Manager</h1>
+
+
+<p>
+
+Update the current reading details and generate your new books.json file.
+
+</p>
+
+
+
+
+
+
+
+<div class="admin-card">
+
+
+<h2>Current Book</h2>
+
+
+
+
+<label>
+
+Book Title
+
+</label>
+
+
+<input id="title" value="The Alchemist">
+
+
+
+
+
+
+<label>
+
+Author
+
+</label>
+
+
+<input id="author" value="Paulo Coelho">
+
+
+
+
+
+
+
+<label>
+
+Book Cover Path
+
+</label>
+
+
+<input id="cover" value="assets/images/alchemist.jpeg">
+
+
+
+
+
+
+
+
+<label>
+
+Why was this book chosen?
+
+</label>
+
+
+<textarea id="reason">
+
+We all get so caught up chasing the goal that sometimes we forget its not always about the final destination, but who we become along the way. Hence, The Alchemist. Happy Reading.
+
+</textarea>
+
+
+
+
+
+
+
+<h2>Meeting Details</h2>
+
+
+
+<label>
+
+Meeting Date
+
+</label>
+
+
+<input id="date" value="To be updated">
+
+
+
+
+
+
+<label>
+
+Meeting Time
+
+</label>
+
+
+<input id="time" value="To be updated">
+
+
+
+
+
+
+<label>
+
+Meeting Venue
+
+</label>
+
+
+<input id="venue" value="Machakos">
+
+
+
+
+
+<button class="button" onclick="generateJSON()">
+
+Generate books.json
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="admin-card">
+
+
+<h2>Generated books.json</h2>
+
+
+
+<textarea id="output" rows="20"></textarea>
+
+
+<p>
+
+Copy the generated text and replace your current books.json file.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+
+© Nexus Book Club | Admin Panel
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+
+
+function generateJSON(){
+
+
+
+const data = {
+
+
+club:{
+
+name:"Nexus Book Club",
+
+location:"Machakos, Kenya",
+
+email:"nexusociety254@gmail.com"
+
+},
+
+
+currentBook:{
+
+
+title:document.getElementById("title").value,
+
+
+author:document.getElementById("author").value,
+
+
+cover:document.getElementById("cover").value,
+
+
+reason:document.getElementById("reason").value,
+
+
+meeting:{
+
+
+date:document.getElementById("date").value,
+
+
+time:document.getElementById("time").value,
+
+
+venue:document.getElementById("venue").value
+
+
+}
+
+
+},
+
+
+readingStatus:{
+
+
+progress:0,
+
+message:"Currently reading"
+
+},
+
+
+nextBooks:[],
+
+
+announcements:[]
+
+};
+
+
+
+document.getElementById("output").value =
+
+JSON.stringify(data,null,4);
+
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>

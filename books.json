@@ -1,0 +1,34 @@
+{
+    "club": {
+        "name": "Nexus Book Club",
+        "location": "Machakos, Kenya",
+        "email": "nexusociety254@gmail.com"
+    },
+
+    "currentBook": {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+
+        "cover": "assets/images/alchemist.jpeg",
+
+        "reason": "We all get so caught up chasing the goal that sometimes we forget it's not always about the final destination, but who we become along the way. Hence, The Alchemist. Happy Reading.",
+
+        "meeting": {
+            "date": "Saturday, 16 August 2025",
+            "time": "2:00 PM",
+            "venue": "Machakos"
+        }
+    },
+
+    "readingStatus": {
+        "progress": 0,
+        "message": "Reading has not started yet. Happy Reading!"
+    },
+
+    "nextBooks": [],
+
+    "announcements": [
+        "Welcome to Nexus Book Club.",
+        "Happy Reading!"
+    ]
+}

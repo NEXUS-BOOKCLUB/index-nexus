@@ -1,1792 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus Book Club — Machakos, Kenya</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        /* ========== CSS VARIABLES ========== */
-        :root {
-            --primary: #1B2A4A;
-            --primary-light: #2D4A7A;
-            --accent-gold: #D4A843;
-            --accent-gold-light: #E8C96E;
-            --accent-red: #C0392B;
-            --cream: #F5F0E8;
-            --cream-dark: #E8E0D6;
-            --text-dark: #1A1A2E;
-            --text-light: #F5F0E8;
-            --text-muted: #6B6B7B;
-            --shadow: 0 8px 32px rgba(27, 42, 74, 0.12);
-            --shadow-hover: 0 12px 48px rgba(27, 42, 74, 0.20);
-            --radius: 16px;
-            --radius-sm: 8px;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --font-serif: 'Playfair Display', serif;
-            --font-sans: 'Inter', sans-serif;
-            --max-width: 1200px;
-            --nav-height: 72px;
-        }
+<title>Nexus Book Club | Machakos, Kenya</title>
 
-        /* ========== RESET & BASE ========== */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta name="description" content="Nexus Book Club Machakos - a community of readers inspiring lifelong learning and meaningful conversations.">
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: var(--nav-height);
-        }
 
-        body {
-            font-family: var(--font-sans);
-            background: var(--cream);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+<link rel="stylesheet" href="style.css">
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        img {
-            max-width: 100%;
-            display: block;
-        }
-        ul {
-            list-style: none;
-        }
 
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-        /* ========== UTILITY ========== */
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .section-subtitle {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        .section-title .gold {
-            color: var(--accent-gold);
-        }
 
-        .text-center {
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 28px;
-            border: none;
-            border-radius: 50px;
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: var(--transition);
-            background: var(--primary);
-            color: #fff;
-            box-shadow: 0 4px 16px rgba(27, 42, 74, 0.20);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(27, 42, 74, 0.30);
-        }
-
-        .btn-gold {
-            background: var(--accent-gold);
-            color: var(--primary);
-        }
-        .btn-gold:hover {
-            background: var(--accent-gold-light);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            box-shadow: none;
-        }
-        .btn-outline:hover {
-            background: var(--primary);
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
-        /* ========== WATERMARK ========== */
-        .watermark {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            opacity: 0.06;
-            pointer-events: none;
-            z-index: 0;
-            font-family: var(--font-serif);
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 0.1em;
-            line-height: 1;
-            text-transform: uppercase;
-            transform: rotate(-6deg);
-            user-select: none;
-        }
-
-        @media (max-width: 768px) {
-            .watermark {
-                font-size: 2.4rem;
-                bottom: 12px;
-                right: 12px;
-                opacity: 0.04;
-            }
-        }
-
-        /* ========== NAVIGATION ========== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: var(--nav-height);
-            background: rgba(27, 42, 74, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: var(--font-serif);
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #fff;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-logo img {
-            height: 40px;
-            width: auto;
-            border-radius: 6px;
-        }
-
-        .nav-logo .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-        .nav-logo .logo-text small {
-            font-family: var(--font-sans);
-            font-size: 0.55rem;
-            font-weight: 400;
-            color: var(--accent-gold);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding: 6px 14px;
-            border-radius: 50px;
-            transition: var(--transition);
-            letter-spacing: 0.01em;
-        }
-
-        .nav-links a:hover {
-            color: #fff;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .nav-links a.active {
-            color: #fff;
-            background: rgba(212, 168, 67, 0.20);
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        .nav-toggle span {
-            display: block;
-            width: 26px;
-            height: 2.5px;
-            background: #fff;
-            border-radius: 4px;
-            transition: var(--transition);
-        }
-
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        /* ========== HERO ========== */
-        .hero {
-            padding: calc(var(--nav-height) + 60px) 0 80px;
-            background: linear-gradient(145deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -20%;
-            width: 80%;
-            height: 120%;
-            background: radial-gradient(ellipse at 70% 50%, rgba(212, 168, 67, 0.10) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(2.8rem, 6vw, 4.2rem);
-            font-weight: 700;
-            line-height: 1.12;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-content h1 .gold {
-            color: var(--accent-gold);
-        }
-
-        .hero-content .tagline {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.75);
-            max-width: 480px;
-            margin-bottom: 24px;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .hero-badges span {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(4px);
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-visual .logo-display {
-            width: 100%;
-            max-width: 380px;
-            aspect-ratio: 1/1;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid rgba(255, 255, 255, 0.06);
-            padding: 30px;
-            text-align: center;
-        }
-
-        .hero-visual .logo-display .logo-placeholder {
-            font-family: var(--font-serif);
-            font-size: 4.5rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            line-height: 1;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-visual .logo-display .logo-placeholder small {
-            display: block;
-            font-size: 1rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 0.2em;
-            margin-top: 8px;
-        }
-
-        .hero-visual .logo-display .logo-sub {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-top: 12px;
-            letter-spacing: 0.1em;
-        }
-
-        /* ========== MISSION / VISION ========== */
-        .mission-section {
-            padding: 80px 0 60px;
-            background: #fff;
-        }
-
-        .mission-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 20px;
-        }
-
-        .mission-card {
-            background: var(--cream);
-            padding: 40px 36px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(27, 42, 74, 0.04);
-        }
-
-        .mission-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .mission-card .icon {
-            font-size: 2.4rem;
-            margin-bottom: 12px;
-        }
-        .mission-card h3 {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        .mission-card p {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-            line-height: 1.7;
-        }
-
-        /* ========== REGISTRATION ========== */
-        .register-section {
-            padding: 80px 0;
-            background: var(--cream);
-        }
-
-        .register-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .register-info h2 {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .register-info p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        .register-info .benefits {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .register-info .benefits li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-        }
-
-        .register-info .benefits li::before {
-            content: '✦';
-            color: var(--accent-gold);
-            font-size: 1.2rem;
-        }
-
-        .register-form {
-            background: #fff;
-            padding: 40px 36px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(27, 42, 74, 0.06);
-        }
-
-        .register-form .form-group {
-            margin-bottom: 18px;
-        }
-
-        .register-form label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-
-        .register-form label .required {
-            color: var(--accent-red);
-        }
-
-        .register-form input,
-        .register-form select,
-        .register-form textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #E8E0D6;
-            border-radius: var(--radius-sm);
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            transition: var(--transition);
-            background: #faf8f5;
-            color: var(--text-dark);
-        }
-
-        .register-form input:focus,
-        .register-form select:focus,
-        .register-form textarea:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            background: #fff;
-            box-shadow: 0 0 0 4px rgba(212, 168, 67, 0.12);
-        }
-
-        .register-form textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        .register-form .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .register-form .btn-submit {
-            width: 100%;
-            padding: 14px;
-            font-size: 1rem;
-            margin-top: 4px;
-        }
-
-        .form-success {
-            display: none;
-            background: #e6f7e6;
-            color: #1a6e1a;
-            padding: 16px 20px;
-            border-radius: var(--radius-sm);
-            margin-top: 16px;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .form-success.show {
-            display: block;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ========== BOOKS & MEETINGS ========== */
-        .books-section {
-            padding: 80px 0;
-            background: #fff;
-        }
-
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
-            margin-top: 20px;
-        }
-
-        .book-card {
-            background: var(--cream);
-            border-radius: var(--radius);
-            padding: 28px 24px 32px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(27, 42, 74, 0.04);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .book-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .book-card .book-cover {
-            font-size: 3.2rem;
-            margin-bottom: 12px;
-        }
-
-        .book-card h4 {
-            font-family: var(--font-serif);
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-bottom: 2px;
-        }
-
-        .book-card .book-author {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        .book-card .book-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px 14px;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin: 8px 0 12px;
-            padding-top: 8px;
-            border-top: 1px solid rgba(27, 42, 74, 0.06);
-        }
-
-        .book-card .book-meta span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .book-card .book-desc {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            flex: 1;
-        }
-
-        .book-card .book-venue {
-            margin-top: 12px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--primary);
-            background: rgba(212, 168, 67, 0.10);
-            padding: 6px 14px;
-            border-radius: 50px;
-            display: inline-block;
-            align-self: flex-start;
-        }
-
-        .books-empty {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        /* ========== DISCUSSION BOARD ========== */
-        .discuss-section {
-            padding: 80px 0;
-            background: var(--cream);
-        }
-
-        .discuss-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-            align-items: start;
-            margin-top: 12px;
-        }
-
-        .discuss-form-box {
-            background: #fff;
-            padding: 32px 28px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(27, 42, 74, 0.06);
-        }
-
-        .discuss-form-box h3 {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-
-        .discuss-form-box p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            margin-bottom: 20px;
-        }
-
-        .discuss-form-box .form-group {
-            margin-bottom: 14px;
-        }
-
-        .discuss-form-box label {
-            display: block;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 3px;
-        }
-
-        .discuss-form-box input,
-        .discuss-form-box textarea {
-            width: 100%;
-            padding: 10px 14px;
-            border: 2px solid #E8E0D6;
-            border-radius: var(--radius-sm);
-            font-family: var(--font-sans);
-            font-size: 0.92rem;
-            transition: var(--transition);
-            background: #faf8f5;
-        }
-
-        .discuss-form-box input:focus,
-        .discuss-form-box textarea:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            background: #fff;
-            box-shadow: 0 0 0 4px rgba(212, 168, 67, 0.10);
-        }
-
-        .discuss-form-box textarea {
-            min-height: 70px;
-            resize: vertical;
-        }
-
-        .discuss-form-box .btn-submit {
-            width: 100%;
-            padding: 12px;
-            font-size: 0.95rem;
-        }
-
-        .discuss-feed {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .discuss-feed .feed-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 4px;
-        }
-
-        .discuss-feed .feed-header h3 {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            color: var(--primary);
-        }
-
-        .discuss-feed .feed-header .count {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            background: #fff;
-            padding: 2px 14px;
-            border-radius: 50px;
-            border: 1px solid #E8E0D6;
-        }
-
-        .discuss-item {
-            background: #fff;
-            padding: 20px 24px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(27, 42, 74, 0.04);
-            transition: var(--transition);
-        }
-
-        .discuss-item:hover {
-            border-color: rgba(212, 168, 67, 0.20);
-        }
-
-        .discuss-item .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 6px;
-        }
-
-        .discuss-item .item-author {
-            font-weight: 600;
-            color: var(--primary);
-            font-size: 0.95rem;
-        }
-
-        .discuss-item .item-book {
-            font-size: 0.8rem;
-            color: var(--accent-gold);
-            font-weight: 500;
-            background: rgba(212, 168, 67, 0.10);
-            padding: 2px 12px;
-            border-radius: 50px;
-        }
-
-        .discuss-item .item-date {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .discuss-item .item-text {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            line-height: 1.7;
-            margin-top: 4px;
-        }
-
-        .discuss-empty {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-muted);
-            background: #fff;
-            border-radius: var(--radius);
-            border: 1px dashed #E8E0D6;
-        }
-
-        .discuss-empty .empty-icon {
-            font-size: 2.4rem;
-            margin-bottom: 8px;
-        }
-
-        /* ========== CONSTITUTION + SOCIAL ========== */
-        .footer-links-section {
-            padding: 60px 0 40px;
-            background: var(--primary);
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .footer-links-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .footer-links-grid h4 {
-            font-family: var(--font-serif);
-            color: #fff;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-        }
-
-        .footer-links-grid p {
-            font-size: 0.92rem;
-            line-height: 1.7;
-            opacity: 0.75;
-        }
-
-        .footer-links-grid .social-links {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-top: 8px;
-        }
-
-        .footer-links-grid .social-links a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 18px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.7);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .footer-links-grid .social-links a:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
-        .footer-links-grid .social-links .social-icon {
-            font-size: 1.2rem;
-        }
-
-        .footer-links-grid .social-links .placeholder-badge {
-            font-size: 0.7rem;
-            opacity: 0.4;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2px 8px;
-            border-radius: 50px;
-        }
-
-        .footer-links-grid .constitution-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 24px;
-            background: rgba(212, 168, 67, 0.15);
-            border-radius: 50px;
-            color: var(--accent-gold);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            border: 1px solid rgba(212, 168, 67, 0.15);
-            margin-top: 6px;
-        }
-
-        .footer-links-grid .constitution-link:hover {
-            background: rgba(212, 168, 67, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .footer-links-grid .contact-email {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 6px;
-        }
-
-        .footer-links-grid .contact-email a {
-            color: var(--accent-gold);
-            font-weight: 500;
-        }
-        .footer-links-grid .contact-email a:hover {
-            text-decoration: underline;
-        }
-
-        /* ========== FOOTER ========== */
-        .footer-bottom {
-            background: var(--primary);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px 0;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.35);
-            font-size: 0.8rem;
-        }
-
-        .footer-bottom .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .footer-bottom .watermark-credit {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            opacity: 0.5;
-        }
-
-        .footer-bottom .watermark-credit .wm-symbol {
-            font-size: 1.2rem;
-            opacity: 0.3;
-        }
-
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 992px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 32px;
-            }
-
-            .hero-content .tagline {
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-badges {
-                justify-content: center;
-            }
-
-            .hero-visual .logo-display {
-                max-width: 240px;
-            }
-
-            .register-wrapper {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .discuss-wrapper {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .footer-links-grid {
-                grid-template-columns: 1fr;
-                gap: 28px;
-            }
-
-            .mission-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: var(--nav-height);
-                left: 0;
-                right: 0;
-                background: rgba(27, 42, 74, 0.97);
-                backdrop-filter: blur(12px);
-                flex-direction: column;
-                padding: 20px 24px 32px;
-                gap: 4px;
-                transform: translateY(-120%);
-                transition: var(--transition);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            }
-
-            .nav-links.open {
-                transform: translateY(0);
-            }
-
-            .nav-links a {
-                padding: 10px 16px;
-                width: 100%;
-                font-size: 0.95rem;
-                border-radius: var(--radius-sm);
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-logo .logo-text small {
-                font-size: 0.45rem;
-            }
-
-            .register-form {
-                padding: 28px 20px;
-            }
-
-            .register-form .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .books-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .discuss-form-box {
-                padding: 24px 18px;
-            }
-
-            .footer-links-grid .social-links a {
-                padding: 6px 14px;
-                font-size: 0.8rem;
-            }
-
-            .footer-bottom .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.4rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            .hero {
-                padding: calc(var(--nav-height) + 40px) 0 50px;
-            }
-
-            .hero-visual .logo-display {
-                max-width: 180px;
-                padding: 16px;
-            }
-
-            .hero-visual .logo-display .logo-placeholder {
-                font-size: 3rem;
-            }
-
-            .register-form {
-                padding: 20px 14px;
-            }
-
-            .discuss-item {
-                padding: 16px 18px;
-            }
-
-            .mission-card {
-                padding: 28px 20px;
-            }
-
-            .book-card {
-                padding: 20px 18px 24px;
-            }
-        }
-    </style>
 </head>
+
+
 <body>
 
-    <!-- ========== WATERMARK ========== -->
-    <div class="watermark" aria-hidden="true">NEXUS</div>
-
-    <!-- ========== NAVIGATION ========== -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <a href="#" class="nav-logo" aria-label="Nexus Book Club Home">
-                <!-- REPLACE src WITH YOUR LOGO IMAGE PATH -->
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23D4A843'/%3E%3Ctext x='50' y='62' font-family='serif' font-size='44' font-weight='bold' fill='%231B2A4A' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E"
-                alt="Nexus Book Club Logo" />
-                <span class="logo-text">
-                    NEXUS
-                    <small>Book Club · Machakos</small>
-                </span>
-            </a>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-
-            <div class="nav-links" id="navLinks" role="menubar">
-                <a href="#mission" role="menuitem">About</a>
-                <a href="#register" role="menuitem">Register</a>
-                <a href="#books" role="menuitem">Books</a>
-                <a href="#discuss" role="menuitem">Discuss</a>
-                <a href="#connect" role="menuitem">Connect</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ========== HERO ========== -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>
-                    Build. Connect.<br />
-                    <span class="gold">Read. Grow.</span>
-                </h1>
-                <p class="tagline">
-                    Nexus is a vibrant community of readers in Machakos, Kenya —
-                    inspiring lifelong learning, meaningful conversations, and
-                    lasting relationships through the power of literature.
-                </p>
-                <div class="hero-badges">
-                    <span>📍 Machakos, Kenya</span>
-                    <span>📚 Since 2024</span>
-                    <span>🤝 Inclusive &amp; open</span>
-                </div>
-                <div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:12px;">
-                    <a href="#register" class="btn btn-gold">Join the Club</a>
-                    <a href="#books" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:#fff;">See Our Books</a>
-                </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="logo-display">
-                    <!-- REPLACE WITH YOUR ACTUAL LOGO IMAGE -->
-                    <div class="logo-placeholder">
-                        N
-                        <small>NEXUS</small>
-                    </div>
-                    <div class="logo-sub">✦ book club ✦</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== MISSION / VISION ========== -->
-    <section class="mission-section" id="mission">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Our <span class="gold">Why</span></h2>
-                <p class="section-subtitle">Guiding everything we do at Nexus</p>
-            </div>
-
-            <div class="mission-grid">
-                <div class="mission-card">
-                    <div class="icon">👁️</div>
-                    <h3>Our Vision</h3>
-                    <p>
-                        To build a vibrant community of readers who inspire lifelong
-                        learning, meaningful conversations, and lasting relationships
-                        across Machakos and beyond.
-                    </p>
-                </div>
-                <div class="mission-card">
-                    <div class="icon">🚀</div>
-                    <h3>Our Mission</h3>
-                    <p>
-                        To provide an inclusive platform where individuals connect
-                        through literature, freely exchange ideas, strengthen
-                        communication skills, and cultivate personal &amp; intellectual
-                        growth.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== REGISTRATION ========== -->
-    <section class="register-section" id="register">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Become a <span class="gold">Member</span></h2>
-                <p class="section-subtitle">Join Nexus and be part of a growing community of readers</p>
-            </div>
-
-            <div class="register-wrapper">
-                <div class="register-info">
-                    <h2>✨ Why join Nexus?</h2>
-                    <p>
-                        Whether you're a lifelong reader or just starting your journey,
-                        Nexus offers a warm, welcoming space to explore books, share
-                        perspectives, and grow with others.
-                    </p>
-                    <ul class="benefits">
-                        <li>Monthly book discussions &amp; meetups</li>
-                        <li>Diverse reading list across genres</li>
-                        <li>Connect with fellow readers in Machakos</li>
-                        <li>Sharpen your communication &amp; critical thinking</li>
-                        <li>Be part of a supportive, intellectual community</li>
-                    </ul>
-                </div>
-
-                <form class="register-form" id="registerForm" action="https://formspree.io/f/mgogqvyn" method="POST">
-                    <h3 style="font-family:var(--font-serif); color:var(--primary); margin-bottom:20px; font-size:1.3rem;">
-                        Register Now
-                    </h3>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fullName">Full Name <span class="required">*</span></label>
-                            <input type="text" id="fullName" name="fullName" required placeholder="e.g. Grace Muthoni" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="you@example.com" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="e.g. 0712 345 678" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="location">Location</label>
-                        <input type="text" id="location" name="location" placeholder="e.g. Machakos Town" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="interests">What kind of books do you love?</label>
-                        <textarea id="interests" name="interests" rows="2" placeholder="Fiction, non-fiction, African literature, poetry…"></textarea>
-                    </div>
-
-                    <input type="hidden" name="_subject" value="📚 New Nexus Book Club Registration" />
-                    <input type="hidden" name="_captcha" value="false" />
-
-                    <button type="submit" class="btn btn-gold btn-submit">Join Nexus →</button>
-
-                    <div class="form-success" id="registerSuccess">
-                        ✅ You're in! Welcome to Nexus. We'll be in touch soon.
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== BOOKS & MEETINGS ========== -->
-    <section class="books-section" id="books">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Current &amp; Upcoming <span class="gold">Reads</span></h2>
-                <p class="section-subtitle">Books we're reading and meeting times — updated regularly</p>
-            </div>
-
-            <div class="books-grid" id="booksGrid">
-                <!-- Rendered by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== DISCUSSION BOARD ========== -->
-    <section class="discuss-section" id="discuss">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">The <span class="gold">Discussion</span> Board</h2>
-                <p class="section-subtitle">Share your thoughts, ask questions, and engage with fellow readers</p>
-            </div>
-
-            <div class="discuss-wrapper">
-                <!-- Discussion Form -->
-                <div class="discuss-form-box">
-                    <h3>📝 Raise a question or opinion</h3>
-                    <p>What's on your mind about a book we're reading?</p>
-
-                    <form id="discussForm" action="https://formspree.io/f/mgogqvyn" method="POST">
-                        <div class="form-group">
-                            <label for="discussName">Your Name <span class="required">*</span></label>
-                            <input type="text" id="discussName" name="discussName" required placeholder="e.g. James Kariuki" />
-                        </div>
-                        <div class="form-group">
-                            <label for="discussBook">Book Title <span class="required">*</span></label>
-                            <input type="text" id="discussBook" name="discussBook" required placeholder="Which book are you discussing?" />
-                        </div>
-                        <div class="form-group">
-                            <label for="discussText">Your Question or Opinion <span class="required">*</span></label>
-                            <textarea id="discussText" name="discussText" required rows="3" placeholder="Share your thoughts…"></textarea>
-                        </div>
-
-                        <input type="hidden" name="_subject" value="💬 New Discussion Post — Nexus Book Club" />
-                        <input type="hidden" name="_captcha" value="false" />
-
-                        <button type="submit" class="btn btn-gold btn-submit">Post to Board →</button>
-
-                        <div class="form-success" id="discussSuccess">
-                            ✅ Your post has been shared! Check the board below.
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Discussion Feed -->
-                <div class="discuss-feed">
-                    <div class="feed-header">
-                        <h3>💬 Recent Discussions</h3>
-                        <span class="count" id="discussCount">0 posts</span>
-                    </div>
-                    <div id="discussFeed">
-                        <!-- Rendered by JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== CONSTITUTION + SOCIAL ========== -->
-    <section class="footer-links-section" id="connect">
-        <div class="container">
-            <div class="footer-links-grid">
-                <!-- Constitution -->
-                <div>
-                    <h4>📜 Constitution</h4>
-                    <p>
-                        Our governing document outlines the values, structure, and
-                        guiding principles of Nexus Book Club.
-                    </p>
-                    <a href="#" class="constitution-link" target="_blank" rel="noopener noreferrer">
-                        📄 Read the Constitution →
-                    </a>
-                    <p style="margin-top:12px; font-size:0.8rem; opacity:0.5;">
-                        (Link to be added — replace <code>#</code> with your PDF URL)
-                    </p>
-                </div>
-
-                <!-- Social Media -->
-                <div>
-                    <h4>📱 Connect With Us</h4>
-                    <p>Follow us for updates, events, and bookish conversations.</p>
-                    <div class="social-links">
-                        <!-- Instagram (placeholder) -->
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <span class="social-icon">📸</span>
-                            Instagram
-                            <span class="placeholder-badge">coming soon</span>
-                        </a>
-                        <!-- Twitter / X (placeholder) -->
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                            <span class="social-icon">🐦</span>
-                            Twitter
-                            <span class="placeholder-badge">coming soon</span>
-                        </a>
-                    </div>
-                    <div class="contact-email" style="margin-top:16px;">
-                        📧 <a href="mailto:nexusociety254@gmail.com">nexusociety254@gmail.com</a>
-                    </div>
-                </div>
-
-                <!-- Location & Quick Info -->
-                <div>
-                    <h4>📍 Nexus Hub</h4>
-                    <p>
-                        Machakos, Kenya<br />
-                        <span style="opacity:0.5; font-size:0.85rem;">
-                            Meetings held monthly — check our Books section for dates.
-                        </span>
-                    </p>
-                    <p style="margin-top:8px; font-size:0.85rem; opacity:0.6;">
-                        ✦ Built with love for the love of books ✦
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer-bottom">
-        <div class="container">
-            <span>&copy; 2026 Nexus Book Club · Machakos, Kenya</span>
-            <div class="watermark-credit">
-                <span class="wm-symbol">◆</span>
-                <span>NEXUS</span>
-                <!-- REPLACE WITH YOUR WATERMARK IMAGE IF DESIRED -->
-            </div>
-        </div>
-    </footer>
-
-
-    <!-- ========================================================== -->
-    <!-- ========== JAVASCRIPT ===================================== -->
-    <!-- ========================================================== -->
-    <script>
-        (function() {
-            'use strict';
-
-            // ==========================================
-            // DATA — Edit these to update the website
-            // ==========================================
-
-            // ----- BOOKS & MEETINGS -----
-            // Add, remove, or edit items here.
-            // The "id" should be unique for each entry.
-            const booksData = [{
-                id: 1,
-                title: 'The River Between',
-                author: 'Ngũgĩ wa Thiong\'o',
-                cover: '📖',
-                meetingDate: '2026-08-15',
-                meetingTime: '3:00 PM EAT',
-                venue: 'Nexus Hub, Machakos Town',
-                description: 'A classic Kenyan novel exploring the clash between tradition and modernity in the colonial era.'
-            }, {
-                id: 2,
-                title: 'Half of a Yellow Sun',
-                author: 'Chimamanda Ngozi Adichie',
-                cover: '🌞',
-                meetingDate: '2026-09-12',
-                meetingTime: '4:00 PM EAT',
-                venue: 'Nexus Hub, Machakos Town',
-                description: 'A sweeping story of love, war, and the Biafran conflict — deeply moving and beautifully told.'
-            }, {
-                id: 3,
-                title: 'The Alchemist',
-                author: 'Paulo Coelho',
-                cover: '✨',
-                meetingDate: '2026-10-10',
-                meetingTime: '3:30 PM EAT',
-                venue: 'Nexus Hub, Machakos Town',
-                description: 'A timeless fable about following your dreams and listening to your heart — a club favourite.'
-            }, {
-                id: 4,
-                title: 'A Grain of Wheat',
-                author: 'Ngũgĩ wa Thiong\'o',
-                cover: '🌾',
-                meetingDate: '2026-11-14',
-                meetingTime: '3:00 PM EAT',
-                venue: 'Nexus Hub, Machakos Town',
-                description: 'Set during the Mau Mau uprising, this novel weaves together personal and political struggles.'
-            }];
-
-            // ----- INITIAL DISCUSSIONS -----
-            // These are shown by default. New posts from the form
-            // are added to localStorage and displayed alongside these.
-            const defaultDiscussions = [{
-                id: 1,
-                author: 'Wanjiru N.',
-                book: 'The River Between',
-                text: 'How does the river symbolise the divide between the two communities? I\'d love to hear everyone\'s take.',
-                date: '2026-07-20'
-            }, {
-                id: 2,
-                author: 'David O.',
-                book: 'Half of a Yellow Sun',
-                text: 'The portrayal of the Biafran war is so visceral. Which character did you find most compelling, and why?',
-                date: '2026-07-18'
-            }, {
-                id: 3,
-                author: 'Faith M.',
-                book: 'The Alchemist',
-                text: 'I found the idea of the "Personal Legend" really powerful. How do you interpret the concept of omens in the story?',
-                date: '2026-07-15'
-            }];
-
-            // ==========================================
-            // RENDER BOOKS
-            // ==========================================
-            function renderBooks() {
-                const grid = document.getElementById('booksGrid');
-                if (!grid) return;
-
-                if (booksData.length === 0) {
-                    grid.innerHTML =
-                        `<div class="books-empty">📚 No books scheduled yet — check back soon!</div>`;
-                    return;
-                }
-
-                // Sort by meeting date (soonest first)
-                const sorted = [...booksData].sort((a, b) => {
-                    return new Date(a.meetingDate) - new Date(b.meetingDate);
-                });
-
-                let html = '';
-                sorted.forEach(book => {
-                    const dateFormatted = formatDate(book.meetingDate);
-                    html += `
-                        <div class="book-card">
-                            <div class="book-cover">${book.cover}</div>
-                            <h4>${book.title}</h4>
-                            <div class="book-author">by ${book.author}</div>
-                            <div class="book-meta">
-                                <span>📅 ${dateFormatted}</span>
-                                <span>⏰ ${book.meetingTime}</span>
-                            </div>
-                            <p class="book-desc">${book.description}</p>
-                            <div class="book-venue">📍 ${book.venue}</div>
-                        </div>
-                    `;
-                });
-
-                grid.innerHTML = html;
-            }
-
-            // ==========================================
-            // RENDER DISCUSSIONS
-            // ==========================================
-            function getDiscussions() {
-                // Try to load from localStorage
-                let stored = [];
-                try {
-                    const raw = localStorage.getItem('nexus_discussions');
-                    if (raw) {
-                        stored = JSON.parse(raw);
-                        if (!Array.isArray(stored)) stored = [];
-                    }
-                } catch (_) { stored = []; }
-
-                // Merge with defaults (avoid duplicates by id)
-                const all = [...defaultDiscussions];
-                const existingIds = new Set(all.map(d => d.id));
-                stored.forEach(d => {
-                    if (!existingIds.has(d.id)) {
-                        all.push(d);
-                    }
-                });
-
-                // Sort by date (newest first)
-                return all.sort((a, b) => new Date(b.date) - new Date(a.date));
-            }
-
-            function saveDiscussions(discs) {
-                try {
-                    localStorage.setItem('nexus_discussions', JSON.stringify(discs));
-                } catch (_) { /* ignore */ }
-            }
-
-            function renderDiscussions() {
-                const feed = document.getElementById('discussFeed');
-                const count = document.getElementById('discussCount');
-                if (!feed || !count) return;
-
-                const discs = getDiscussions();
-
-                count.textContent = `${discs.length} post${discs.length !== 1 ? 's' : ''}`;
-
-                if (discs.length === 0) {
-                    feed.innerHTML = `
-                        <div class="discuss-empty">
-                            <div class="empty-icon">💭</div>
-                            <p>No discussions yet. Be the first to share your thoughts!</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                let html = '';
-                discs.forEach(d => {
-                    const dateFormatted = formatDate(d.date);
-                    html += `
-                        <div class="discuss-item">
-                            <div class="item-header">
-                                <span class="item-author">${escapeHtml(d.author)}</span>
-                                <span class="item-book">📚 ${escapeHtml(d.book)}</span>
-                                <span class="item-date">${dateFormatted}</span>
-                            </div>
-                            <div class="item-text">${escapeHtml(d.text)}</div>
-                        </div>
-                    `;
-                });
-
-                feed.innerHTML = html;
-            }
-
-            // ==========================================
-            // ADD NEW DISCUSSION (from form)
-            // ==========================================
-            function addDiscussion(author, book, text) {
-                const discs = getDiscussions();
-                const newId = Date.now() + Math.floor(Math.random() * 1000);
-                const now = new Date().toISOString().slice(0, 10);
-
-                discs.push({
-                    id: newId,
-                    author: author.trim(),
-                    book: book.trim(),
-                    text: text.trim(),
-                    date: now
-                });
-
-                // Save to localStorage (without defaults, to avoid duplication)
-                // We store only the non-default ones
-                const defaultIds = new Set(defaultDiscussions.map(d => d.id));
-                const toStore = discs.filter(d => !defaultIds.has(d.id));
-                saveDiscussions(toStore);
-
-                renderDiscussions();
-            }
-
-            // ==========================================
-            // HELPERS
-            // ==========================================
-            function formatDate(dateStr) {
-                if (!dateStr) return 'TBD';
-                try {
-                    const d = new Date(dateStr);
-                    if (isNaN(d.getTime())) return dateStr;
-                    return d.toLocaleDateString('en-KE', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric'
-                    });
-                } catch (_) { return dateStr; }
-            }
-
-            function escapeHtml(str) {
-                const div = document.createElement('div');
-                div.textContent = str;
-                return div.innerHTML;
-            }
-
-            // ==========================================
-            // FORM HANDLING
-            // ==========================================
-
-            // ---- Registration Form ----
-            const registerForm = document.getElementById('registerForm');
-            const registerSuccess = document.getElementById('registerSuccess');
-
-            if (registerForm) {
-                registerForm.addEventListener('submit', function(e) {
-                    // We let Formspree handle the actual submission.
-                    // But we show the success message and reset the form.
-                    // Using a small delay so Formspree can process.
-                    setTimeout(() => {
-                        registerSuccess.classList.add('show');
-                        registerForm.reset();
-                    }, 600);
-
-                    // We don't prevent default — Formspree needs the native submit.
-                    // But we'll add a small UX touch: disable the button briefly.
-                    const btn = registerForm.querySelector('.btn-submit');
-                    if (btn) {
-                        btn.disabled = true;
-                        btn.textContent = 'Submitting…';
-                        setTimeout(() => {
-                            btn.disabled = false;
-                            btn.textContent = 'Join Nexus →';
-                        }, 4000);
-                    }
-                });
-            }
-
-            // ---- Discussion Form ----
-            const discussForm = document.getElementById('discussForm');
-            const discussSuccess = document.getElementById('discussSuccess');
-
-            if (discussForm) {
-                discussForm.addEventListener('submit', function(e) {
-                    // Gather data
-                    const name = document.getElementById('discussName')?.value || '';
-                    const book = document.getElementById('discussBook')?.value || '';
-                    const text = document.getElementById('discussText')?.value || '';
-
-                    if (name && book && text) {
-                        // Add to the board immediately (optimistic update)
-                        addDiscussion(name, book, text);
-                    }
-
-                    // Show success and reset
-                    setTimeout(() => {
-                        discussSuccess.classList.add('show');
-                        discussForm.reset();
-                    }, 400);
-
-                    const btn = discussForm.querySelector('.btn-submit');
-                    if (btn) {
-                        btn.disabled = true;
-                        btn.textContent = 'Posting…';
-                        setTimeout(() => {
-                            btn.disabled = false;
-                            btn.textContent = 'Post to Board →';
-                        }, 4000);
-                    }
-
-                    // We let the form submit to Formspree as well.
-                    // The user will get an email notification.
-                });
-            }
-
-            // ==========================================
-            // NAVIGATION (mobile toggle + active state)
-            // ==========================================
-            const navToggle = document.getElementById('navToggle');
-            const navLinks = document.getElementById('navLinks');
-
-            if (navToggle && navLinks) {
-                navToggle.addEventListener('click', function() {
-                    const isOpen = navLinks.classList.toggle('open');
-                    this.classList.toggle('active');
-                    this.setAttribute('aria-expanded', isOpen);
-                });
-
-                // Close nav on link click (mobile)
-                navLinks.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navLinks.classList.remove('open');
-                        navToggle.classList.remove('active');
-                        navToggle.setAttribute('aria-expanded', 'false');
-                    });
-                });
-            }
-
-            // ---- Active nav link on scroll ----
-            const sections = document.querySelectorAll('section[id]');
-            const navAnchors = document.querySelectorAll('.nav-links a');
-
-            function updateActiveNav() {
-                let current = '';
-                sections.forEach(section => {
-                    const top = section.offsetTop - 100;
-                    if (window.scrollY >= top) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navAnchors.forEach(a => {
-                    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-                });
-            }
-
-            window.addEventListener('scroll', updateActiveNav);
-            window.addEventListener('load', updateActiveNav);
-
-            // ==========================================
-            // INIT
-            // ==========================================
-            renderBooks();
-            renderDiscussions();
-
-            // Re-render discussions when returning to the tab
-            // (in case another tab updated localStorage — though not likely with this setup)
-            document.addEventListener('visibilitychange', () => {
-                if (!document.hidden) {
-                    renderDiscussions();
-                }
-            });
-
-            console.log('📚 Nexus Book Club site loaded successfully!');
-            console.log('ℹ️  To update books & meetings, edit the "booksData" array in the JavaScript.');
-
-        })();
-    </script>
+
+<header>
+
+
+<div class="logo">
+
+<img src="assets/logo.jpeg" alt="Nexus Book Club Logo">
+
+
+<div>
+
+<h2>NEXUS</h2>
+
+<span>Book Club • Machakos</span>
+
+</div>
+
+
+</div>
+
+
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#current-book">Current Read</a>
+
+<a href="discussion.html">Discussion</a>
+
+<a href="join.html">Join</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<main>
+
+
+<section class="hero" id="home">
+
+
+<div class="hero-content">
+
+<h1>NEXUS</h1>
+
+<h2>Where Stories Build Community</h2>
+
+
+<p>
+
+A vibrant community of readers inspiring lifelong learning,
+meaningful conversations and lasting relationships.
+
+</p>
+
+
+<a href="join.html" class="button">
+
+Become a Member
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="about">
+
+
+<div class="container">
+
+
+<h2>About Nexus</h2>
+
+
+<p>
+
+Nexus is a book club based in Machakos, Kenya,
+created for people who believe books are bridges to ideas,
+friendships and personal growth.
+
+</p>
+
+
+
+<div class="mission-grid">
+
+
+<div class="card">
+
+<h3>Our Vision</h3>
+
+<p>
+
+To build a vibrant community of readers who inspire lifelong learning,
+meaningful conversations and lasting relationships.
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>Our Mission</h3>
+
+<p>
+
+To provide an inclusive platform where individuals connect through
+literature, exchange ideas, strengthen communication skills and
+cultivate personal and intellectual growth.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="current-book">
+
+
+<div class="container">
+
+
+<h2>Currently Reading</h2>
+
+
+
+<div class="book-card">
+
+
+<img id="book-cover"
+src="assets/images/alchemist.jpeg"
+alt="Current Book">
+
+
+
+<div class="book-details">
+
+
+<h3 id="book-title">
+
+Loading book...
+
+</h3>
+
+
+<h4 id="book-author">
+
+</h4>
+
+
+
+
+<h4>Why This Book Was Chosen</h4>
+
+
+<p id="book-reason">
+
+Loading reason...
+
+</p>
+
+
+
+
+<h4>Next Meeting</h4>
+
+
+<p id="meeting-details">
+
+Loading meeting details...
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="join-preview">
+
+
+<div class="container">
+
+
+<h2>Become Part of Nexus</h2>
+
+
+<p>
+
+Join a community where stories connect people,
+ideas grow and conversations matter.
+
+</p>
+
+
+<a href="join.html" class="button">
+
+Join Nexus
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="constitution">
+
+
+<div class="container">
+
+
+<h2>Nexus Constitution</h2>
+
+
+<p>
+
+Learn more about our values, guidelines and structure.
+
+</p>
+
+
+<a class="button"
+href="https://drive.google.com/file/d/1nQrigVHsab2looKoOiCFYk3uOMcdqRfB/view?usp=drivesdk"
+target="_blank">
+
+View Constitution
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="socials">
+
+
+<div class="container">
+
+
+<h2>Connect With Us</h2>
+
+
+<p>
+
+Social media pages coming soon.
+
+</p>
+
+
+
+<div class="social-icons">
+
+
+<a href="#">
+
+Instagram
+
+</a>
+
+
+
+<a href="#">
+
+Twitter / X
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="contact">
+
+
+<div class="container">
+
+
+<h2>Contact Nexus</h2>
+
+
+<p>
+
+📧
+
+<a href="mailto:nexusociety254@gmail.com">
+
+nexusociety254@gmail.com
+
+</a>
+
+</p>
+
+
+<p>
+
+📍 Machakos, Kenya
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+
+
+<footer>
+
+<p>
+
+© Nexus Book Club | Machakos, Kenya
+
+</p>
+
+</footer>
+
+
+
+
+
+<script src="script.js"></script>
+
 
 </body>
+
+
 </html>
