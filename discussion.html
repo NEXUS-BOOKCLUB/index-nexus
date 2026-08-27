@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Community Discussion | Nexus Book Club</title>
+
+    <meta name="description"
+          content="Join the Nexus Book Club community discussion. Share ideas, discuss books and connect with fellow readers in Machakos, Kenya.">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="icon"
+          type="image/jpeg"
+          href="assets/logo.jpeg">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="index.html"
+           class="logo">
+
+            <img
+                src="assets/logo.jpeg"
+                alt="Nexus Book Club Logo">
+
+
+            <div class="logo-text">
+
+                <h2>NEXUS</h2>
+
+                <span>
+                    Read. Reflect. Rise.
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="index.html#story">
+                        Our Story
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="index.html#purpose">
+                        Purpose
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="index.html#reading">
+                        Current Read
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="discussion.html"
+                       class="active">
+                        Community
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="join.html">
+                        Become a Member
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="constitution.html">
+                        Constitution
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="index.html#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+
+            <span class="hero-tag">
+
+                📚 Community Discussion
+
+            </span>
+
+
+            <h1>
+
+                Join the
+
+                <span>
+                    Conversation.
+                </span>
+
+            </h1>
+
+
+            <h3>
+
+                Read together.
+                Reflect together.
+                Rise together.
+
+            </h3>
+
+
+            <p>
+
+                Books become more meaningful when we discuss
+                them together.
+
+                Share your thoughts, challenge ideas, ask
+                questions and learn from fellow readers.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="#discussion"
+                    class="button">
+
+                    Start Reading
+
+                </a>
+
+
+                <a
+                    href="join.html"
+                    class="secondary-btn">
+
+                    Become a Member
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CURRENT BOOK
+===================================================== -->
+
+<section class="current-reading">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <h2>
+                Our Current Discussion
+            </h2>
+
+
+            <div class="divider"></div>
+
+
+            <p>
+
+                This month, Nexus is exploring a story about
+                dreams, purpose, courage and the journey of
+                becoming who we are meant to be.
+
+            </p>
+
+        </div>
+
+
+
+        <!--
+            Firebase loading state.
+
+            The section starts hidden so the old book
+            does not flash before Firebase responds.
+        -->
+
+        <div
+            class="reading-grid"
+            id="discussionReadingContent"
+            style="opacity:0;">
+
+
+
+            <!-- BOOK COVER -->
+
+            <div class="book-cover">
+
+                <img
+                    id="discussionBookCover"
+                    src=""
+                    alt="Loading current book">
+
+            </div>
+
+
+
+            <!-- BOOK INFORMATION -->
+
+            <div class="book-info">
+
+
+                <h2 id="discussionBookTitle">
+
+                    Loading current read...
+
+                </h2>
+
+
+                <h3 id="discussionBookAuthor">
+
+                    Please wait...
+
+                </h3>
+
+
+                <p>
+
+                    This month we're exploring the journey
+                    behind the current Nexus read.
+
+                </p>
+
+
+                <p>
+
+                    What does it really mean to pursue a dream?
+
+                    How do our experiences change who we become
+                    along the way?
+
+                </p>
+
+
+
+                <!-- READING PROGRESS -->
+
+                <div class="progress-wrapper">
+
+
+                    <div class="progress-label">
+
+                        <span>
+                            Club Reading Progress
+                        </span>
+
+
+                        <span id="discussionProgressText">
+
+                            Loading...
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            id="discussionProgressFill"
+                            class="progress-fill"
+                            style="width:0%;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NEXT DISCUSSION -->
+
+                <p>
+
+                    <strong>
+                        📅 Next Discussion:
+                    </strong>
+
+
+                    <span id="discussionDate">
+
+                        Coming Soon
+
+                    </span>
+
+                </p>
+
+
+
+                <!-- VENUE -->
+
+                <p>
+
+                    <strong>
+                        📍 Venue:
+                    </strong>
+
+
+                    <span id="discussionVenue">
+
+                        Machakos, Kenya
+
+                    </span>
+
+                </p>
+
+
+                <br>
+
+
+                <a
+                    href="#discussion"
+                    class="button">
+
+                    Enter Discussion
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DISCUSSION PROMPT
+===================================================== -->
+
+<section class="values">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <h2>
+                Discussion Prompt
+            </h2>
+
+
+            <div class="divider"></div>
+
+
+            <p>
+
+                Before joining the conversation,
+                take a moment to think about this question.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="promise">
+
+
+            <h2>
+
+                "If fear wasn't a factor...
+
+                <br>
+
+                what dream would you pursue?"
+
+            </h2>
+
+
+
+            <p>
+
+                Use examples from
+
+                <strong id="promptBookTitle">
+
+                    Loading...
+
+                </strong>,
+
+                your own experiences,
+                or another book you've read.
+
+            </p>
+
+
+
+            <p>
+
+                There is no single correct answer.
+
+                Nexus is a space for different perspectives,
+                thoughtful questions and meaningful
+                conversations.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COMMUNITY GUIDELINES
+===================================================== -->
+
+<section class="join-benefits">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <h2>
+                Community Guidelines
+            </h2>
+
+
+            <div class="divider"></div>
+
+
+            <p>
+
+                Nexus is built on respect, curiosity and
+                meaningful conversations.
+
+                Help us keep this community welcoming
+                for everyone.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="benefits-grid">
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    🤝
+                </div>
+
+
+                <h3>
+                    Respect Everyone
+                </h3>
+
+
+                <p>
+
+                    Different opinions make discussions
+                    richer.
+
+                    Challenge ideas — not people.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    📚
+                </div>
+
+
+                <h3>
+                    Stay On Topic
+                </h3>
+
+
+                <p>
+
+                    Keep discussions connected to books,
+                    reading, learning and personal growth.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    💡
+                </div>
+
+
+                <h3>
+                    Share Your Perspective
+                </h3>
+
+
+                <p>
+
+                    There are no perfect answers.
+
+                    Your thoughts and experiences matter.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    🌱
+                </div>
+
+
+                <h3>
+                    Encourage Growth
+                </h3>
+
+
+                <p>
+
+                    Leave every discussion having learned
+                    something new or seen an idea differently.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COMMUNITY DISCUSSION / GISCUS
+===================================================== -->
+
+<section
+    class="connect"
+    id="discussion">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <h2>
+                Community Discussion
+            </h2>
+
+
+            <div class="divider"></div>
+
+
+            <p>
+
+                This is where Nexus members can share
+                thoughts, ask questions and interact
+                with fellow readers.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="contact-card">
+
+
+            <!-- GISCUS -->
+
+            <script
+                src="https://giscus.app/client.js"
+                data-repo="NEXUS-BOOKCLUB/index-nexus"
+                data-repo-id="R_kgDOTnJ7HA"
+                data-category="General"
+                data-category-id="DIC_kwDOTnJ7HM4DCThl"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+            </script>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BECOME A MEMBER CTA
+===================================================== -->
+
+<section class="quote">
+
+    <div class="container">
+
+
+        <blockquote>
+
+            Ready to turn reading into conversation?
+
+        </blockquote>
+
+
+        <cite>
+
+            Join Nexus Book Club.
+
+        </cite>
+
+
+        <br>
+        <br>
+
+
+        <a
+            href="join.html"
+            class="button">
+
+            Become a Member 📚
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <!-- COLUMN 1 -->
+
+            <div class="footer-column">
+
+
+                <div class="footer-logo">
+
+
+                    <img
+                        src="assets/logo.jpeg"
+                        alt="Nexus Logo">
+
+
+                    <div>
+
+                        <h3>
+                            NEXUS
+                        </h3>
+
+
+                        <p>
+                            Read. Reflect. Rise.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <p>
+
+                    A community where books inspire
+                    conversations, friendships and
+                    lifelong learning.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- COLUMN 2 -->
+
+            <div class="footer-column">
+
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <ul>
+
+
+                    <li>
+
+                        <a href="index.html">
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="index.html#story">
+                            Our Story
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="index.html#purpose">
+                            Purpose
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="index.html#reading">
+                            Current Read
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="discussion.html">
+                            Community
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="join.html">
+                            Become a Member
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="constitution.html">
+                            Constitution
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- COLUMN 3 -->
+
+            <div class="footer-column">
+
+
+                <h3>
+                    Current Book
+                </h3>
+
+
+                <p>
+
+
+                    <strong id="footerBookTitle">
+
+                        Loading...
+
+                    </strong>
+
+
+                    <br>
+
+
+                    <span id="footerBookAuthor">
+
+                        Loading...
+
+                    </span>
+
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    Join us as we read,
+                    reflect and grow together.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- COLUMN 4 -->
+
+            <div class="footer-column">
+
+
+                <h3>
+                    Nexus Philosophy
+                </h3>
+
+
+                <p>
+
+                    Every book holds the power to
+                    transform a life.
+
+                    Every discussion has the power
+                    to transform a community.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+
+            <p>
+
+                © 2026 Nexus Book Club.
+                All Rights Reserved.
+
+            </p>
+
+
+            <p class="footer-motto">
+
+                Read. Reflect. Rise.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     EXISTING JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+
+<!-- =====================================================
+     FIREBASE — LIVE DISCUSSION DATA
+===================================================== -->
+
+<script type="module">
+
+    import { db }
+        from "./firebase-config.js";
+
+
+    import {
+        ref,
+        onValue
+    }
+    from "https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
+
+
+
+    /* =====================================================
+       FIREBASE REFERENCE
+    ===================================================== */
+
+    const homepageRef =
+        ref(db, "nexus/homepage");
+
+
+
+    /* =====================================================
+       CURRENT READING CONTAINER
+    ===================================================== */
+
+    const discussionReadingContent =
+        document.getElementById(
+            "discussionReadingContent"
+        );
+
+
+
+    /* =====================================================
+       FIREBASE LISTENER
+    ===================================================== */
+
+    onValue(
+
+        homepageRef,
+
+        (snapshot) => {
+
+
+            const data =
+                snapshot.val();
+
+
+            if (!data) {
+
+                console.warn(
+                    "No Nexus homepage data found."
+                );
+
+
+                if (
+                    discussionReadingContent
+                ) {
+
+                    discussionReadingContent.style.opacity =
+                        "1";
+
+                }
+
+
+                return;
+
+            }
+
+
+
+            /* =================================================
+               CURRENT BOOK
+            ================================================= */
+
+            const book =
+                data.currentBook;
+
+
+
+            if (
+                book
+            ) {
+
+
+                /* =============================================
+                   BOOK TITLE
+                ============================================= */
+
+                const bookTitle =
+                    document.getElementById(
+                        "discussionBookTitle"
+                    );
+
+
+                const footerBookTitle =
+                    document.getElementById(
+                        "footerBookTitle"
+                    );
+
+
+                const promptBookTitle =
+                    document.getElementById(
+                        "promptBookTitle"
+                    );
+
+
+
+                if (
+                    book.title !== undefined
+                ) {
+
+
+                    if (bookTitle) {
+
+                        bookTitle.textContent =
+                            book.title;
+
+                    }
+
+
+                    if (footerBookTitle) {
+
+                        footerBookTitle.textContent =
+                            book.title;
+
+                    }
+
+
+                    if (promptBookTitle) {
+
+                        promptBookTitle.textContent =
+                            book.title;
+
+                    }
+
+                }
+
+
+
+                /* =============================================
+                   AUTHOR
+                ============================================= */
+
+                const bookAuthor =
+                    document.getElementById(
+                        "discussionBookAuthor"
+                    );
+
+
+                const footerBookAuthor =
+                    document.getElementById(
+                        "footerBookAuthor"
+                    );
+
+
+
+                if (
+                    book.author !== undefined
+                ) {
+
+
+                    if (bookAuthor) {
+
+                        bookAuthor.textContent =
+                            book.author;
+
+                    }
+
+
+                    if (footerBookAuthor) {
+
+                        footerBookAuthor.textContent =
+                            book.author;
+
+                    }
+
+                }
+
+
+
+                /* =============================================
+                   BOOK COVER
+                ============================================= */
+
+                const bookCover =
+                    document.getElementById(
+                        "discussionBookCover"
+                    );
+
+
+
+                if (
+                    bookCover &&
+                    book.cover
+                ) {
+
+                    bookCover.src =
+                        book.cover;
+
+
+                    bookCover.alt =
+                        book.title ||
+                        "Current Nexus Book";
+
+                }
+
+
+
+                /* =============================================
+                   READING PROGRESS
+                ============================================= */
+
+                let progress =
+                    Number(
+                        book.progress ?? 0
+                    );
+
+
+
+                if (
+                    !Number.isFinite(
+                        progress
+                    )
+                ) {
+
+                    progress = 0;
+
+                }
+
+
+
+                progress =
+                    Math.max(
+                        0,
+                        Math.min(
+                            100,
+                            progress
+                        )
+                    );
+
+
+
+                const progressText =
+                    document.getElementById(
+                        "discussionProgressText"
+                    );
+
+
+                const progressFill =
+                    document.getElementById(
+                        "discussionProgressFill"
+                    );
+
+
+
+                if (progressText) {
+
+                    progressText.textContent =
+                        progress + "%";
+
+                }
+
+
+
+                if (progressFill) {
+
+                    progressFill.style.width =
+                        progress + "%";
+
+                }
+
+
+
+                /* =============================================
+                   DISCUSSION DATE
+                ============================================= */
+
+                const discussionDate =
+                    document.getElementById(
+                        "discussionDate"
+                    );
+
+
+
+                if (
+                    discussionDate &&
+                    book.discussion
+                ) {
+
+                    discussionDate.textContent =
+                        book.discussion;
+
+                }
+
+
+
+                /* =============================================
+                   VENUE
+                ============================================= */
+
+                const discussionVenue =
+                    document.getElementById(
+                        "discussionVenue"
+                    );
+
+
+
+                if (
+                    discussionVenue &&
+                    book.venue
+                ) {
+
+                    discussionVenue.textContent =
+                        book.venue;
+
+                }
+
+            }
+
+
+
+            /* =================================================
+               REVEAL AFTER FIREBASE LOADS
+            ================================================= */
+
+            if (
+                discussionReadingContent
+            ) {
+
+                discussionReadingContent.style.transition =
+                    "opacity 0.35s ease";
+
+
+                discussionReadingContent.style.opacity =
+                    "1";
+
+            }
+
+        },
+
+
+        /* =====================================================
+           FIREBASE ERROR
+        ===================================================== */
+
+        (error) => {
+
+            console.error(
+                "Firebase Discussion page error:",
+                error
+            );
+
+
+            /*
+                If Firebase fails, reveal the page
+                instead of leaving it invisible.
+            */
+
+            if (
+                discussionReadingContent
+            ) {
+
+                discussionReadingContent.style.opacity =
+                    "1";
+
+            }
+
+        }
+
+    );
+
+</script>
+
+
+</body>
+
+</html>

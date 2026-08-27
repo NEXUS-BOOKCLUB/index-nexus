@@ -1,0 +1,2214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexus Bookclub and Society | Constitution</title>
+
+    <meta name="description"
+        content="The Constitution and Bylaws of Nexus Bookclub and Society.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpeg">
+
+    <style>
+        /* =========================================
+           NEXUS CONSTITUTION PAGE
+        ========================================= */
+
+        .constitution-hero {
+            padding: 110px 20px 80px;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                #4b2e1f,
+                #6f4e37,
+                #8b6b4f
+            );
+            color: white;
+        }
+
+        .constitution-hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            margin: 15px 0;
+        }
+
+        .constitution-hero h1 span {
+            color: #f0d6b0;
+        }
+
+        .constitution-hero p {
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: .92;
+        }
+
+        .constitution-page {
+            background: #f7f2ec;
+            padding: 70px 20px;
+        }
+
+        .constitution-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .constitution-document {
+            background: #fff;
+            padding: 55px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, .08);
+        }
+
+        .document-title {
+            text-align: center;
+            border-bottom: 2px solid #e7ddd2;
+            padding-bottom: 35px;
+            margin-bottom: 40px;
+        }
+
+        .document-title img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .document-title h2 {
+            color: #4b2e1f;
+            font-size: 30px;
+            margin: 8px 0;
+        }
+
+        .document-title h3 {
+            color: #6f4e37;
+            font-size: 21px;
+            margin: 8px 0;
+        }
+
+        .document-title p {
+            color: #777;
+            margin-top: 15px;
+        }
+
+        .preamble {
+            background: #f8f3ed;
+            border-left: 5px solid #6f4e37;
+            padding: 25px 30px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 45px;
+        }
+
+        .preamble h2 {
+            color: #4b2e1f;
+            margin-top: 0;
+        }
+
+        .constitution-article {
+            margin-bottom: 45px;
+        }
+
+        .constitution-article h2 {
+            color: #4b2e1f;
+            font-size: 25px;
+            border-bottom: 2px solid #eadfd3;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .constitution-section {
+            margin-bottom: 25px;
+        }
+
+        .constitution-section h3 {
+            color: #6f4e37;
+            font-size: 18px;
+            margin-bottom: 9px;
+        }
+
+        .constitution-section p {
+            color: #444;
+            line-height: 1.85;
+            margin: 0;
+        }
+
+        .constitution-section ul,
+        .constitution-section ol {
+            color: #444;
+            line-height: 1.85;
+            padding-left: 25px;
+        }
+
+        .constitution-section li {
+            margin-bottom: 8px;
+        }
+
+        .membership-category {
+            background: #faf7f3;
+            border: 1px solid #eadfd3;
+            padding: 18px 20px;
+            border-radius: 12px;
+            margin: 10px 0;
+        }
+
+        .membership-category strong {
+            color: #5a3927;
+        }
+
+        .ratification {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8f3ed;
+            border-radius: 15px;
+            border: 1px solid #e7ddd2;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .signature {
+            padding-top: 25px;
+            border-top: 1px solid #555;
+        }
+
+        .constitution-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 45px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 14px 26px;
+            border-radius: 30px;
+            background: #6f4e37;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-button:hover {
+            opacity: .9;
+        }
+
+        .print-button {
+            border: 2px solid #6f4e37;
+            background: transparent;
+            color: #6f4e37;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 700px) {
+
+            .constitution-document {
+                padding: 28px 20px;
+            }
+
+            .signature-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+        }
+
+        @media print {
+
+            header,
+            footer,
+            .constitution-hero,
+            .constitution-actions {
+                display: none !important;
+            }
+
+            .constitution-page {
+                padding: 0;
+                background: white;
+            }
+
+            .constitution-document {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="assets/logo.jpeg"
+                alt="Nexus Book Club Logo">
+
+            <div class="logo-text">
+
+                <h2>NEXUS</h2>
+
+                <span>
+                    Read. Reflect. Rise.
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#story">
+                        Our Story
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#purpose">
+                        Purpose
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#reading">
+                        Current Read
+                    </a>
+                </li>
+
+                <li>
+                    <a href="discussion.html">
+                        Community
+                    </a>
+                </li>
+
+                <li>
+                    <a href="join.html">
+                        Become a Member
+                    </a>
+                </li>
+
+                <li>
+                    <a href="constitution.html">
+                        Constitution
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="constitution-hero">
+
+    <div class="container">
+
+        <span class="hero-tag">
+            📜 GOVERNING DOCUMENT
+        </span>
+
+        <h1>
+            The <span>Constitution</span>
+        </h1>
+
+        <p>
+            Nexus Bookclub and Society —
+            Constitution and Bylaws
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     DOCUMENT
+========================================= -->
+
+<section class="constitution-page">
+
+    <div class="constitution-container">
+
+        <article class="constitution-document">
+
+
+            <!-- DOCUMENT TITLE -->
+
+            <div class="document-title">
+
+                <img
+                    src="assets/logo.jpeg"
+                    alt="Nexus Bookclub Logo">
+
+                <h2>
+                    NEXUS BOOKCLUB AND SOCIETY
+                </h2>
+
+                <h3>
+                    CONSTITUTION AND BYLAWS
+                </h3>
+
+                <p>
+                    Adopted by the founding membership
+                </p>
+
+                <p>
+                    <strong>Effective date:</strong>
+                    ______________________
+                </p>
+
+            </div>
+
+
+            <!-- PREAMBLE -->
+
+            <div class="preamble">
+
+                <h2>
+                    PREAMBLE
+                </h2>
+
+                <p>
+                    We, the members of Nexus Bookclub and Society,
+                    in order to cultivate a durable community of
+                    readers; to provide a fair, transparent, and
+                    predictable framework for governance; to protect
+                    the rights and dignity of every member; and to
+                    ensure the Society can adapt to circumstances
+                    both favorable and adverse, do hereby establish
+                    this Constitution as the founding and governing
+                    document of the Society.
+                </p>
+
+                <p>
+                    Where this Constitution is silent, the Executive
+                    Committee shall act in the spirit of fairness,
+                    transparency, and the best interests of the
+                    membership as a whole.
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 ARTICLE I
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE I — NAME, PURPOSE, AND VALUES
+                </h2>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        1.1 Name
+                    </h3>
+
+                    <p>
+                        The organization shall be known as
+                        “Nexus Bookclub and Society” (hereafter
+                        “the Society”), and may be referred to
+                        informally as “Nexus.”
+                    </p>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        1.2 Purpose
+                    </h3>
+
+                    <p>
+                        The Society exists to bring readers together
+                        for shared discovery, rigorous and generous
+                        discussion, and mutual respect across
+                        differing interpretations and tastes.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Host regular meetings for the discussion
+                            of selected books and other literary works.
+                        </li>
+
+                        <li>
+                            Encourage exposure to diverse genres,
+                            authors, cultures, and perspectives.
+                        </li>
+
+                        <li>
+                            Foster a welcoming environment in which
+                            members may express honest views without
+                            fear of ridicule or exclusion.
+                        </li>
+
+                        <li>
+                            Support literacy, reading culture, and,
+                            where resources allow, community literary
+                            initiatives.
+                        </li>
+
+                        <li>
+                            Maintain the long-term institutional
+                            continuity of the Society independent
+                            of any single member.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        1.3 Values
+                    </h3>
+
+                    <p>
+                        The Society is committed to intellectual
+                        honesty, pluralism of thought, courtesy in
+                        disagreement, and stewardship of the
+                        community's shared resources and reputation.
+                        No member's continued participation shall
+                        depend upon agreement with the majority's
+                        literary or personal opinions.
+                    </p>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        1.4 Non-Affiliation
+                    </h3>
+
+                    <p>
+                        The Society is an independent, member-run body.
+                        It is not affiliated with, sponsored by, or
+                        acting on behalf of any publisher, author,
+                        retailer, or media franchise unless a written
+                        partnership agreement has been separately
+                        ratified under Article XII.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE II
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE II — MEMBERSHIP
+                </h2>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        2.1 Eligibility
+                    </h3>
+
+                    <p>
+                        Membership is open to any individual who
+                        supports the Society's purpose, agrees to
+                        abide by this Constitution and the Code of
+                        Conduct (Article VIII), and completes the
+                        application process then in effect.
+                    </p>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        2.2 Minors
+                    </h3>
+
+                    <p>
+                        Applicants under the age of 18 may be admitted
+                        only with written guardian consent and shall
+                        be subject to any additional safeguarding
+                        measures adopted by the Executive Committee.
+                    </p>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        2.3 Categories of Membership
+                    </h3>
+
+                    <div class="membership-category">
+                        <strong>
+                            1. Full Member
+                        </strong>
+                        — regular attendee in good standing,
+                        with full voting rights.
+                    </div>
+
+                    <div class="membership-category">
+                        <strong>
+                            2. Associate Member
+                        </strong>
+                        — reduced-commitment status
+                        (e.g., remote or occasional attendees);
+                        may attend and speak but votes only on matters
+                        specified in 2.3(a) of the bylaws the Committee
+                        adopts.
+                    </div>
+
+                    <div class="membership-category">
+                        <strong>
+                            3. Honorary Member
+                        </strong>
+                        — conferred by two-thirds vote of Full Members
+                        for extraordinary contribution; non-voting
+                        unless separately holding another category.
+                    </div>
+
+                    <div class="membership-category">
+                        <strong>
+                            4. Founding Member
+                        </strong>
+                        — original signatories to this Constitution;
+                        carries no additional voting weight but is
+                        recorded for institutional history.
+                    </div>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        2.4 Rights of Members
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            To attend meetings, nominate and vote on
+                            book selections, and participate in discussion.
+                        </li>
+
+                        <li>
+                            To stand for elected office, subject to Article IV.
+                        </li>
+
+                        <li>
+                            To inspect the Society's financial summary
+                            and meeting minutes upon reasonable request.
+                        </li>
+
+                        <li>
+                            To raise grievances under Article X without retaliation.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        2.5 Obligations of Members
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            To pay dues, if any, as set under Article VII.
+                        </li>
+
+                        <li>
+                            To comply with the Code of Conduct.
+                        </li>
+
+                        <li>
+                            To treat fellow members, guests, and any
+                            partner institutions with courtesy.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        2.6 Resignation
+                    </h3>
+
+                    <p>
+                        A member may resign at any time by written
+                        notice to the Secretary. Resignation does not
+                        entitle the member to a refund of dues already
+                        paid, except as the Treasurer may authorize
+                        on a pro-rated basis for extraordinary
+                        circumstances (see 7.6).
+                    </p>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        2.7 Lapse and Reinstatement
+                    </h3>
+
+                    <p>
+                        Membership lapses automatically after three
+                        consecutive unexcused absences from scheduled
+                        meetings, or after non-payment of dues for one
+                        full cycle, following written reminder.
+                        A lapsed member may seek reinstatement through
+                        the standard application process and is not
+                        entitled to retroactive rights or standing.
+                    </p>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        2.8 Suspension and Expulsion
+                    </h3>
+
+                    <p>
+                        Suspension or expulsion may be imposed only
+                        through the disciplinary process in Article IX.
+                        No member shall be expelled solely for the content
+                        of their literary opinions, criticism of the
+                        Society expressed through proper channels, or
+                        protected characteristics.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE III
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE III — GOVERNANCE STRUCTURE
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>
+                        3.1 Executive Committee
+                    </h3>
+
+                    <p>
+                        The Society shall be governed by an Executive
+                        Committee (“the Committee”) consisting of the
+                        following officers, each serving one vote on
+                        Committee matters:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            <strong>President</strong> — presides over
+                            meetings, represents the Society externally,
+                            and holds the tie-breaking vote (3.4).
+                        </li>
+
+                        <li>
+                            <strong>Vice President</strong> — assists
+                            the President and assumes presidential duties
+                            in the President's absence or incapacity.
+                        </li>
+
+                        <li>
+                            <strong>Secretary</strong> — maintains records,
+                            minutes, membership rolls, and official
+                            correspondence.
+                        </li>
+
+                        <li>
+                            <strong>Treasurer</strong> — manages dues,
+                            accounts, budgets, and financial reporting.
+                        </li>
+
+                        <li>
+                            <strong>Programming Coordinator</strong> —
+                            administers the book selection process and
+                            meeting schedule.
+                        </li>
+
+                        <li>
+                            <strong>Membership &amp; Conduct Officer</strong> —
+                            processes applications, monitors compliance
+                            with the Code of Conduct, and serves as first
+                            point of contact for grievances.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        3.2 Committee Meetings
+                    </h3>
+
+                    <p>
+                        The Committee shall meet no less than quarterly.
+                        A majority of Committee seats constitutes quorum.
+                        Decisions are made by simple majority of those
+                        present unless this Constitution requires a
+                        higher threshold.
+                    </p>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        3.3 Committee Authority
+                    </h3>
+
+                    <p>
+                        The Committee may act on routine and operational
+                        matters between general meetings but may not
+                        amend this Constitution, expel a member outright
+                        without due process, or commit the Society to
+                        expenditure beyond the threshold set in Article VII
+                        without membership or budgetary authorization.
+                    </p>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        3.4 Tie-Breaking and Deadlock
+                    </h3>
+
+                    <p>
+                        In the event of a tied Committee vote, the President
+                        casts the deciding vote. If the President is absent,
+                        conflicted, or the tie involves the presidency itself,
+                        the Vice President breaks the tie. If both are
+                        unavailable or conflicted, the matter is deferred
+                        to the next General Meeting for a membership vote.
+                    </p>
+
+                </div>
+
+
+                <div class="constitution-section">
+
+                    <h3>
+                        3.5 Conflicts of Interest
+                    </h3>
+
+                    <p>
+                        An officer with a direct personal, financial, or
+                        familial interest in a matter before the Committee
+                        shall disclose the interest and recuse themselves
+                        from the vote, though they may participate in
+                        discussion at the Committee's discretion.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE IV
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE IV — ELECTIONS AND TERMS
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>4.1 Term Length</h3>
+
+                    <p>
+                        Officers serve one-year terms, renewable by
+                        re-election, with a recommended (non-binding)
+                        guideline that no officer hold the same seat
+                        for more than three consecutive terms, to
+                        encourage institutional renewal.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>4.2 Nomination</h3>
+
+                    <p>
+                        Any Full Member in good standing for at least
+                        three months may be nominated, including
+                        self-nomination, no fewer than 14 days before
+                        the annual election meeting.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>4.3 Voting</h3>
+
+                    <p>
+                        Officers are elected by a simple majority of
+                        Full Members present and voting at the annual
+                        meeting, by secret ballot if any member requests it.
+                        Associate and Honorary Members do not vote in
+                        officer elections unless the bylaws provide otherwise.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>4.4 Vacancies</h3>
+
+                    <p>
+                        If an officer resigns, is removed, or becomes
+                        permanently unable to serve, the Committee shall
+                        appoint an interim replacement from among Full
+                        Members within 21 days, to serve until the next
+                        scheduled or emergency election. If the presidency
+                        itself becomes vacant, the Vice President automatically
+                        assumes the role on an interim basis.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>4.5 Removal from Office</h3>
+
+                    <p>
+                        An officer may be removed for cause (material breach
+                        of this Constitution, financial misconduct, or serious
+                        violation of the Code of Conduct) by a two-thirds vote
+                        of Full Members at a meeting for which the proposed
+                        removal was on the published agenda, following an
+                        opportunity for the officer to respond.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>4.6 Contested or Deadlocked Elections</h3>
+
+                    <p>
+                        If an election ends in a tie between candidates,
+                        a runoff vote shall be held immediately among those
+                        tied. If the runoff also ties, the outgoing officer
+                        for that seat casts the deciding vote, or, if the seat
+                        is newly created or the outgoing officer is one of the
+                        tied candidates, the President (or Vice President,
+                        per 3.4) decides.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE V
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE V — MEETINGS
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>5.1 Types of Meetings</h3>
+
+                    <ul>
+
+                        <li>
+                            <strong>Regular Meetings</strong> — for book
+                            discussion, held on a schedule set by the
+                            Programming Coordinator.
+                        </li>
+
+                        <li>
+                            <strong>General Meetings</strong> — for governance
+                            business, elections, and votes, held at least
+                            twice yearly.
+                        </li>
+
+                        <li>
+                            <strong>Emergency Meetings</strong> — called by
+                            the President, or by petition of at least 20%
+                            of Full Members, for urgent matters.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>5.2 Notice</h3>
+
+                    <p>
+                        Members shall receive at least seven days' notice
+                        of Regular Meetings and at least fourteen days'
+                        notice of General Meetings, including any agenda
+                        items requiring a vote. Emergency Meetings require
+                        at least 48 hours' notice except where immediate
+                        action is necessary to prevent serious harm to the
+                        Society, in which case the Committee shall document
+                        the reason for shortened notice.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>5.3 Quorum</h3>
+
+                    <p>
+                        Quorum for a General Meeting is the greater of ten
+                        Full Members or 30% of total Full Membership.
+                        If quorum is not met, the meeting may proceed for
+                        discussion purposes only; any votes taken must be
+                        ratified at a subsequent properly-quorate meeting
+                        or by written ballot circulated to the full membership.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>5.4 Virtual and Hybrid Meetings</h3>
+
+                    <p>
+                        Meetings may be held in person, virtually, or in
+                        hybrid format at the Committee's discretion.
+                        Members attending virtually count toward quorum
+                        and voting where the platform used allows reasonably
+                        reliable identification of attendees.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>5.5 Voting Procedures</h3>
+
+                    <p>
+                        Except where this Constitution specifies a higher
+                        threshold, decisions are made by simple majority
+                        of votes cast. Abstentions are not counted for or
+                        against. Proxy voting is permitted only if the
+                        bylaws expressly authorize it and the proxy is
+                        submitted in writing before the vote.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>5.6 Minutes</h3>
+
+                    <p>
+                        The Secretary shall record minutes of every General
+                        and Committee meeting, including votes taken and
+                        their outcomes, and shall make them available to
+                        members within 14 days.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE VI
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE VI — BOOK SELECTION AND DISCUSSION
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>6.1 Nomination of Titles</h3>
+
+                    <p>
+                        Any member may nominate a title for a future meeting.
+                        The Programming Coordinator shall maintain a running
+                        list and ensure a reasonable diversity of genre, form,
+                        author background, and difficulty across a given cycle
+                        (recommended: no more than two consecutive selections
+                        by authors of the same nationality or in the same
+                        genre, absent membership agreement otherwise).
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>6.2 Selection Method</h3>
+
+                    <p>
+                        Titles are selected by member vote (plurality or
+                        ranked-choice, as the Committee designates for a
+                        given cycle) at least four weeks before the scheduled
+                        discussion, to allow reading time.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>6.3 Content Advisories</h3>
+
+                    <p>
+                        Where a selected work contains graphic violence,
+                        sexual content, or other material some members may
+                        find distressing, the Programming Coordinator shall
+                        issue a brief advisory in the meeting notice.
+                        This does not remove the title from selection;
+                        it ensures informed attendance.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>6.4 Discussion Conduct</h3>
+
+                    <p>
+                        Discussion should proceed under a presumption of
+                        good faith. Disagreement with a book, an author,
+                        or a fellow member's interpretation is expected
+                        and welcome; personal attacks, mockery of a member's
+                        reading level or background, and deliberate spoilers
+                        without warning are not.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>6.5 Facilitator Role</h3>
+
+                    <p>
+                        A discussion facilitator (the Programming Coordinator
+                        or a designated member) may set ground rules for a
+                        given session, including time limits per speaker,
+                        to ensure balanced participation.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE VII
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE VII — FINANCES
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>7.1 Dues</h3>
+
+                    <p>
+                        The Committee may set annual or periodic membership
+                        dues, subject to ratification by simple majority at
+                        a General Meeting. Dues levels shall be published
+                        at least 30 days before taking effect.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>7.2 Financial Hardship</h3>
+
+                    <p>
+                        No otherwise-eligible applicant shall be excluded
+                        from membership solely for inability to pay dues.
+                        The Treasurer may grant fee waivers or reductions
+                        at their discretion, subject to Committee review,
+                        and the identity of any member receiving a waiver
+                        shall remain confidential.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>7.3 Budget and Approval Thresholds</h3>
+
+                    <p>
+                        The Treasurer shall present an annual budget for
+                        Committee approval. Any single expenditure exceeding
+                        an amount set in the bylaws (or, absent a bylaw,
+                        exceeding 15% of the Society's liquid funds)
+                        requires prior approval by General Meeting vote
+                        rather than the Committee alone.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>7.4 Financial Reporting</h3>
+
+                    <p>
+                        The Treasurer shall present a financial summary at
+                        every General Meeting and an annual statement of
+                        income, expenses, and reserves. Any member may
+                        request an independent review of the accounts by
+                        petition of 25% of Full Members, at the Society's
+                        expense if irregularities are found, and at the
+                        petitioners' expense if none are found.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>7.5 Custody of Funds</h3>
+
+                    <p>
+                        Society funds shall be held in an account requiring
+                        at minimum the co-authorization of two officers
+                        (typically the Treasurer and the President or
+                        Vice President) for any withdrawal or transfer
+                        above a nominal petty-cash threshold set in the
+                        bylaws.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>7.6 Refunds</h3>
+
+                    <p>
+                        Dues are generally non-refundable. The Treasurer
+                        may authorize pro-rated refunds in cases of serious
+                        hardship, relocation, or Society-caused inability
+                        to deliver services (e.g., prolonged suspension
+                        of meetings), subject to Committee ratification.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>7.7 Prohibition on Personal Benefit</h3>
+
+                    <p>
+                        No officer or member shall derive personal financial
+                        benefit from Society funds beyond reimbursement of
+                        properly authorized expenses. Any commercial
+                        partnership (Article XII) involving payment to
+                        the Society shall be disclosed in the annual
+                        financial statement.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE VIII
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE VIII — CODE OF CONDUCT
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>8.1 General Standard</h3>
+
+                    <p>
+                        Members shall treat one another with courtesy,
+                        respect differing opinions and backgrounds, and
+                        refrain from harassment, discrimination,
+                        intimidation, or disruptive conduct at any
+                        Society function, in person or online.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>8.2 Harassment and Discrimination</h3>
+
+                    <p>
+                        Harassment, including unwelcome conduct based on
+                        a protected characteristic, sexual harassment,
+                        stalking, or threats, is prohibited absolutely
+                        and is grounds for immediate suspension pending
+                        investigation under Article IX, regardless of
+                        the harasser's standing or office.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>8.3 Confidentiality of Personal Disclosures</h3>
+
+                    <p>
+                        Discussion of books may lead members to share
+                        personal experiences. Such disclosures shall not
+                        be repeated outside the meeting without the
+                        member's consent, absent a safeguarding concern
+                        requiring escalation.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>8.4 Intellectual Honesty</h3>
+
+                    <p>
+                        Members presenting critical or biographical
+                        material as fact should make a reasonable effort
+                        toward accuracy; honest error is not misconduct,
+                        but knowing deception intended to mislead the
+                        group is.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>8.5 Use of Society Name and Platforms</h3>
+
+                    <p>
+                        No member may speak on behalf of the Society to
+                        media, partners, or the public without Committee
+                        authorization, nor use Society channels
+                        (mailing lists, social accounts) for personal,
+                        political, or commercial promotion unrelated
+                        to Society business.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>8.6 Alcohol, Venue, and Guest Conduct</h3>
+
+                    <p>
+                        Where meetings are held at venues serving alcohol
+                        or in private homes, members are expected to comply
+                        with venue rules and host reasonable requests.
+                        Guests brought by members are the responsible
+                        member's guests for conduct purposes.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE IX
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE IX — DISCIPLINARY PROCEDURES
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>9.1 Reporting</h3>
+
+                    <p>
+                        Any member may report a suspected violation of
+                        the Code of Conduct to the Membership &amp;
+                        Conduct Officer, or to any other officer if the
+                        Conduct Officer is the subject of the complaint.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>9.2 Interim Measures</h3>
+
+                    <p>
+                        Where a complaint alleges harassment, safety
+                        risk, or serious misconduct, the Committee may
+                        impose an immediate interim suspension pending
+                        investigation, without prejudging the outcome.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>9.3 Investigation</h3>
+
+                    <p>
+                        The Committee (excluding any officer who is a
+                        party to or has a conflict regarding the complaint)
+                        shall investigate within a reasonable time, which
+                        may include hearing from the complainant, the
+                        respondent, and relevant witnesses. Both parties
+                        shall be treated with confidentiality to the
+                        extent possible.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>9.4 Graduated Response</h3>
+
+                    <ol>
+
+                        <li>
+                            Informal resolution or mediation (Article X),
+                            where appropriate and both parties consent.
+                        </li>
+
+                        <li>
+                            Verbal or written warning.
+                        </li>
+
+                        <li>
+                            Temporary suspension of membership.
+                        </li>
+
+                        <li>
+                            Removal from office (per 4.5), independent
+                            of continued membership.
+                        </li>
+
+                        <li>
+                            Expulsion from the Society.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>9.5 Standard of Decision</h3>
+
+                    <p>
+                        Disciplinary decisions shall be made on the balance
+                        of probabilities (more likely than not), documented
+                        in writing, and communicated to the respondent
+                        with reasons.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>9.6 Appeal</h3>
+
+                    <p>
+                        A respondent may appeal a Committee disciplinary
+                        decision to the General Membership by written
+                        request within 14 days. An appeal is decided by
+                        simple majority vote at the next General Meeting,
+                        except that expulsion decisions require a two-thirds
+                        vote to overturn, reflecting the Committee's closer
+                        proximity to the facts.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>9.7 False Complaints</h3>
+
+                    <p>
+                        A complaint made in good faith but not ultimately
+                        upheld is not itself misconduct. A complaint
+                        knowingly fabricated to harm another member is
+                        a separate violation of this Code.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE X
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE X — GRIEVANCE AND DISPUTE RESOLUTION
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>10.1 Scope</h3>
+
+                    <p>
+                        This Article governs disputes not involving alleged
+                        Code of Conduct violations (Article IX) — for example,
+                        disagreements over book selection, event planning,
+                        or interpersonal friction that has not risen to
+                        misconduct.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>10.2 Informal Resolution</h3>
+
+                    <p>
+                        Members are encouraged to raise concerns directly
+                        and informally in the first instance.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>10.3 Mediation</h3>
+
+                    <p>
+                        Where informal resolution fails, either party may
+                        request mediation by a neutral officer or member
+                        agreed upon by both parties. Mediation outcomes
+                        are non-binding unless both parties agree in
+                        writing to be bound.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>10.4 Committee Referral</h3>
+
+                    <p>
+                        Unresolved disputes affecting the Society's operation
+                        may be referred to the Committee for a binding
+                        decision, subject to appeal to the General Membership
+                        by simple majority.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>10.5 External Disputes</h3>
+
+                    <p>
+                        Disputes involving external parties (venues, vendors,
+                        partner organizations) shall be handled by the
+                        President and Treasurer jointly, with recourse to
+                        ordinary legal process only as a last resort and
+                        only upon Committee authorization.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE XI
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE XI — RECORDS, COMMUNICATION, AND PRIVACY
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>11.1 Official Records</h3>
+
+                    <p>
+                        The Secretary shall maintain the Constitution,
+                        meeting minutes, membership roll, and correspondence
+                        archive, retained for no less than seven years and
+                        transferred in full to any successor Secretary.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>11.2 Data Privacy</h3>
+
+                    <p>
+                        Personal information collected for membership
+                        purposes (contact details, dues records,
+                        disciplinary history) shall be used solely for
+                        Society administration, shall not be sold or shared
+                        with third parties without consent, and shall be
+                        deleted or anonymized within a reasonable period
+                        after a member's departure, except where retention
+                        is necessary for legal, financial, or safeguarding
+                        reasons.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>11.3 Official Channels</h3>
+
+                    <p>
+                        The Society shall designate official communication
+                        channels (e.g., a mailing list or messaging group).
+                        Announcements of votes, dues changes, or disciplinary
+                        policy shall be made through official channels to
+                        ensure all members receive equal notice.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE XII
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE XII — EXTERNAL RELATIONS AND PARTNERSHIPS
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>12.1 Author and Venue Partnerships</h3>
+
+                    <p>
+                        The Committee may pursue relationships with authors,
+                        publishers, bookstores, libraries, or venues to
+                        support the Society's purpose, provided any agreement
+                        involving Society funds or use of the Society's name
+                        is disclosed to the membership.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>12.2 Sponsorship</h3>
+
+                    <p>
+                        Sponsorship or donations from commercial entities
+                        require Committee approval and shall not compromise
+                        the Society's editorial independence in book
+                        selection or discussion.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>12.3 Media and Public Statements</h3>
+
+                    <p>
+                        Only the President, or a member the President
+                        expressly designates, may issue public statements
+                        on the Society's behalf.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE XIII
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE XIII — CONTINGENCIES AND EXTRAORDINARY CIRCUMSTANCES
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>13.1 Purpose of This Article</h3>
+
+                    <p>
+                        This Article addresses circumstances the Society
+                        hopes never to face, so that the Constitution
+                        remains workable under both ordinary and adverse
+                        conditions.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>13.2 Incapacity or Death of an Officer</h3>
+
+                    <p>
+                        If an officer becomes incapacitated or dies,
+                        the vacancy provisions of 4.4 apply immediately
+                        without requiring fault-finding or delay.
+                        The Committee shall extend appropriate condolence
+                        or support to the officer's family or the officer
+                        as circumstances warrant, at the Society's discretion.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>13.3 Force Majeure</h3>
+
+                    <p>
+                        Where events beyond the Society's control
+                        (public health emergencies, natural disasters,
+                        venue unavailability, civil disruption) prevent
+                        meetings as scheduled, the Committee may suspend,
+                        postpone, or move meetings online without triggering
+                        the notice periods of Article V, provided reasonable
+                        effort is made to inform members promptly.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>13.4 Membership Decline</h3>
+
+                    <p>
+                        If Full Membership falls below five for two
+                        consecutive scheduled General Meetings, the
+                        Committee shall place the Society's continued
+                        operation on the agenda of the next meeting,
+                        with options including recruitment efforts,
+                        merger with a like-minded organization
+                        (requiring two-thirds member approval), or
+                        dissolution under Article XV.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>13.5 Complete Loss of Leadership</h3>
+
+                    <p>
+                        If the entire Committee resigns, is removed,
+                        or is otherwise unable to serve simultaneously,
+                        any three Full Members may jointly call an
+                        emergency General Meeting, with 72 hours'
+                        notice by any available means, solely to elect
+                        an interim Committee.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>13.6 Financial Insolvency</h3>
+
+                    <p>
+                        If Society liabilities exceed its assets, the
+                        Committee shall notify the membership within
+                        14 days, cease discretionary spending, and present
+                        a recovery or wind-down plan at an emergency meeting.
+                        No officer is personally liable for Society debts
+                        incurred in good faith within their authority.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>13.7 Reputational or Legal Crisis</h3>
+
+                    <p>
+                        In the event of a legal claim against the Society
+                        or a matter of serious reputational risk, the
+                        Committee may take immediate protective action,
+                        including venue changes, interim suspensions under
+                        9.2, or engaging outside counsel, and shall inform
+                        the membership as promptly as is legally and
+                        practically appropriate.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>13.8 Best-Case Growth</h3>
+
+                    <p>
+                        Should membership grow substantially beyond the
+                        Society's original scale, the Committee may propose,
+                        for General Meeting approval, additional officer
+                        roles, sub-chapters, or a delegate structure,
+                        provided any such expansion is codified as a
+                        Constitutional amendment under Article XIV rather
+                        than informal practice.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>13.9 Ambiguity and Silence</h3>
+
+                    <p>
+                        Where this Constitution does not address a specific
+                        circumstance, the Committee shall act consistently
+                        with the Preamble's stated values, document its
+                        reasoning in the minutes, and treat the resolution
+                        as precedent subject to formalization at the next
+                        opportunity to amend.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE XIV
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE XIV — AMENDMENTS
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>14.1 Proposal</h3>
+
+                    <p>
+                        Any Full Member may propose an amendment in writing
+                        to the Secretary, who shall circulate it to the
+                        membership at least 21 days before the vote.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>14.2 Adoption</h3>
+
+                    <p>
+                        Amendments require a two-thirds majority of Full
+                        Members present and voting at a General Meeting
+                        at which quorum is met, or by written ballot of
+                        the full membership achieving the same threshold.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>14.3 Effective Date</h3>
+
+                    <p>
+                        Amendments take effect immediately upon adoption
+                        unless the amendment specifies a later date,
+                        and shall not retroactively invalidate actions
+                        properly taken under the prior text.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 ARTICLE XV
+            ================================== -->
+
+            <section class="constitution-article">
+
+                <h2>
+                    ARTICLE XV — DISSOLUTION
+                </h2>
+
+                <div class="constitution-section">
+
+                    <h3>15.1 Vote to Dissolve</h3>
+
+                    <p>
+                        The Society may be dissolved by a two-thirds vote
+                        of Full Members at a General Meeting called for
+                        that express purpose, with at least 30 days' notice.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>15.2 Distribution of Assets</h3>
+
+                    <p>
+                        Upon dissolution, after settlement of all debts
+                        and liabilities, remaining assets shall be donated
+                        to one or more literacy-focused nonprofit
+                        organizations or public libraries selected by
+                        majority vote of the membership at the dissolution
+                        meeting. No asset shall revert to any individual
+                        member.
+                    </p>
+
+                </div>
+
+                <div class="constitution-section">
+
+                    <h3>15.3 Records</h3>
+
+                    <p>
+                        The Secretary's records shall be archived or
+                        transferred to a designated member or institution
+                        for historical preservation for no less than
+                        seven years following dissolution.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 RATIFICATION
+            ================================== -->
+
+            <div class="ratification">
+
+                <h2>
+                    RATIFICATION
+                </h2>
+
+                <p>
+                    This Constitution was adopted by the founding
+                    membership of Nexus Bookclub and Society on the
+                    date first written above, and remains in force
+                    until amended or the Society is dissolved in
+                    accordance with its terms.
+                </p>
+
+
+                <div class="signature-grid">
+
+                    <div class="signature">
+
+                        <strong>
+                            President
+                        </strong>
+
+                        <br><br>
+
+                        _______________________________
+
+                        <br><br>
+
+                        Date: __________________
+
+                    </div>
+
+
+                    <div class="signature">
+
+                        <strong>
+                            Secretary
+                        </strong>
+
+                        <br><br>
+
+                        _______________________________
+
+                        <br><br>
+
+                        Date: __________________
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 ACTIONS
+            ================================== -->
+
+            <div class="constitution-actions">
+
+                <a
+                    href="join.html"
+                    class="back-button"
+                >
+                    ← Back to Membership
+                </a>
+
+                <button
+                    class="print-button"
+                    onclick="window.print()"
+                >
+                    🖨️ Print Constitution
+                </button>
+
+            </div>
+
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-column">
+
+                <div class="footer-logo">
+
+                    <img
+                        src="assets/logo.jpeg"
+                        alt="Nexus Logo">
+
+                    <div>
+
+                        <h3>NEXUS</h3>
+
+                        <p>
+                            Read. Reflect. Rise.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    A community where books inspire
+                    conversations, friendships and
+                    lifelong learning.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#story">
+                            Our Story
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="discussion.html">
+                            Community
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="join.html">
+                            Become a Member
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="constitution.html">
+                            Constitution
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Current Book
+                </h3>
+
+                <p>
+                    <strong>
+                        The Alchemist
+                    </strong>
+
+                    <br>
+
+                    Paulo Coelho
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Nexus Philosophy
+                </h3>
+
+                <p>
+                    Every book holds the power to transform
+                    a life. Every discussion has the power
+                    to transform a community.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Nexus Book Club.
+                All Rights Reserved.
+            </p>
+
+            <p class="footer-motto">
+                Read. Reflect. Rise.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

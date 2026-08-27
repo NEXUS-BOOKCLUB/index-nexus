@@ -3,370 +3,1308 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nexus Admin Dashboard</title>
+    <title>Nexus Admin Control Centre</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpeg">
 
+    <style>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5efe8;
+            color: #3e2723;
+            min-height: 100vh;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+        .hidden {
+            display: none !important;
+        }
 
+        /* =========================
+           LOGIN
+        ========================= */
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background:
+                linear-gradient(
+                    rgba(62,39,35,.78),
+                    rgba(62,39,35,.78)
+                ),
+                url("assets/images/alchemist.jpeg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 430px;
+            background: #fffaf5;
+            padding: 45px 35px;
+            border-radius: 24px;
+            box-shadow: 0 25px 70px rgba(0,0,0,.3);
+            text-align: center;
+        }
+
+        .login-logo {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .login-box h1 {
+            color: #6f4e37;
+            margin-bottom: 8px;
+        }
+
+        .login-box p {
+            color: #795548;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #d7c4b5;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            background: white;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #6f4e37;
+            box-shadow: 0 0 0 3px rgba(111,78,55,.1);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .button {
+            width: 100%;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 30px;
+            background: #6f4e37;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .button:hover {
+            background: #4e342e;
+            transform: translateY(-2px);
+        }
+
+        .error {
+            color: #b3261e;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           ADMIN PANEL
+        ========================= */
+
+        .admin-header {
+            background: #3e2723;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0,0,0,.15);
+        }
+
+        .admin-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .admin-brand img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .admin-brand h2 {
+            font-size: 20px;
+        }
+
+        .logout-button {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,.5);
+            padding: 9px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .logout-button:hover {
+            background: white;
+            color: #3e2723;
+        }
+
+        .dashboard {
+            width: 92%;
+            max-width: 1150px;
+            margin: 35px auto 60px;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            color: #4e342e;
+            margin-bottom: 8px;
+        }
+
+        .welcome p {
+            color: #795548;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .admin-card {
+            background: #fffaf5;
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(62,39,35,.08);
+            border: 1px solid #eaded4;
+        }
+
+        .admin-card.full {
+            grid-column: 1 / -1;
+        }
+
+        .admin-card h2 {
+            color: #6f4e37;
+            margin-bottom: 8px;
+        }
+
+        .admin-card .subtitle {
+            color: #8d6e63;
+            margin-bottom: 22px;
+            font-size: 14px;
+        }
+
+        .save-button {
+            margin-top: 8px;
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            display: none;
+            font-size: 14px;
+        }
+
+        .status.success {
+            display: block;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status.error-status {
+            display: block;
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        /* =========================
+           MEMBER DISPLAY
+        ========================= */
+
+        .member-preview {
+            text-align: center;
+            background: #f1e5da;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .member-preview-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #6f4e37;
+        }
+
+        .member-preview-label {
+            color: #795548;
+        }
+
+        /* =========================
+           BOOK PREVIEW
+        ========================= */
+
+        .book-preview {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: #f1e5da;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .book-preview img {
+            width: 90px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .book-preview h3 {
+            color: #5d4037;
+            margin-bottom: 5px;
+        }
+
+        .book-preview p {
+            color: #795548;
+            font-size: 14px;
+        }
+
+        /* =========================
+           INFO CARD
+        ========================= */
+
+        .info-card {
+            background: #4e342e;
+            color: white;
+        }
+
+        .info-card h2 {
+            color: white;
+        }
+
+        .info-card p {
+            line-height: 1.7;
+            color: #f5e9df;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-card.full {
+                grid-column: auto;
+            }
+
+            .admin-header {
+                padding: 15px;
+            }
+
+            .admin-brand h2 {
+                font-size: 16px;
+            }
+
+            .dashboard {
+                width: 94%;
+            }
+
+            .book-preview {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }
+
+    </style>
 
 </head>
-
-
 
 <body>
 
 
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
 
-<header>
+<div id="loginPage" class="login-page">
+
+    <div class="login-box">
+
+        <img
+            src="assets/logo.jpeg"
+            alt="Nexus Logo"
+            class="login-logo">
+
+        <h1>Nexus Admin</h1>
+
+        <p>
+            Welcome to the Nexus Book Club Control Centre.
+        </p>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+
+                <label for="email">
+                    Admin Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter admin email"
+                    required>
+
+            </div>
 
 
-<div class="logo">
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required>
+
+            </div>
 
 
-<img src="assets/logo.jpeg" alt="Nexus Logo">
+            <button
+                type="submit"
+                class="button">
 
+                Sign In
 
-<div>
+            </button>
 
-<h2>NEXUS</h2>
+            <div
+                id="loginError"
+                class="error">
+            </div>
 
-<span>Admin Dashboard</span>
+        </form>
+
+    </div>
 
 </div>
 
 
+<!-- =====================================================
+     ADMIN DASHBOARD
+===================================================== -->
+
+<div id="adminPanel" class="hidden">
+
+
+    <!-- HEADER -->
+
+    <header class="admin-header">
+
+        <div class="admin-brand">
+
+            <img
+                src="assets/logo.jpeg"
+                alt="Nexus Logo">
+
+            <h2>
+                Nexus Control Centre
+            </h2>
+
+        </div>
+
+        <button
+            id="logoutButton"
+            class="logout-button">
+
+            Logout
+
+        </button>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+
+    <main class="dashboard">
+
+
+        <div class="welcome">
+
+            <h1>
+                Welcome, Admin 👋
+            </h1>
+
+            <p>
+                Manage the information displayed on the Nexus Book Club homepage.
+            </p>
+
+        </div>
+
+
+        <div class="admin-grid">
+
+
+            <!-- =================================================
+                 MEMBER MANAGEMENT
+            ================================================== -->
+
+            <section class="admin-card">
+
+                <h2>
+                    👥 Members
+                </h2>
+
+                <p class="subtitle">
+                    Update the number of registered Nexus members.
+                </p>
+
+                <div class="input-group">
+
+                    <label for="members">
+
+                        Current Member Count
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="members"
+                        min="0"
+                        placeholder="e.g. 25">
+
+                </div>
+
+                <button
+                    id="saveMembers"
+                    class="button save-button">
+
+                    Save Member Count
+
+                </button>
+
+                <div
+                    id="memberStatus"
+                    class="status">
+                </div>
+
+
+                <div class="member-preview">
+
+                    <div
+                        id="memberPreview"
+                        class="member-preview-number">
+
+                        0
+
+                    </div>
+
+                    <div class="member-preview-label">
+
+                        Current Members
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CURRENT BOOK
+            ================================================== -->
+
+            <section class="admin-card">
+
+                <h2>
+                    📖 Current Read
+                </h2>
+
+                <p class="subtitle">
+                    Control the book information displayed on the homepage.
+                </p>
+
+                <div class="input-group">
+
+                    <label for="bookTitle">
+                        Book Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bookTitle"
+                        placeholder="The Alchemist">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="bookAuthor">
+                        Author
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bookAuthor"
+                        placeholder="Paulo Coelho">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="bookDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="bookDescription"
+                        placeholder="Enter the book description..."></textarea>
+
+                </div>
+
+
+                <button
+                    id="saveBook"
+                    class="button save-button">
+
+                    Save Book Information
+
+                </button>
+
+
+                <div
+                    id="bookStatus"
+                    class="status">
+                </div>
+
+
+                <div class="book-preview">
+
+                    <img
+                        src="assets/images/alchemist.jpeg"
+                        alt="Current Book">
+
+                    <div>
+
+                        <h3 id="bookPreviewTitle">
+                            The Alchemist
+                        </h3>
+
+                        <p id="bookPreviewAuthor">
+                            Paulo Coelho
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 READING PROGRESS
+            ================================================== -->
+
+            <section class="admin-card">
+
+                <h2>
+                    📊 Reading Progress
+                </h2>
+
+                <p class="subtitle">
+                    Set the current reading progress percentage.
+                </p>
+
+                <div class="input-group">
+
+                    <label for="progress">
+                        Progress (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="progress"
+                        min="0"
+                        max="100"
+                        placeholder="60">
+
+                </div>
+
+
+                <button
+                    id="saveProgress"
+                    class="button save-button">
+
+                    Save Progress
+
+                </button>
+
+
+                <div
+                    id="progressStatus"
+                    class="status">
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 DISCUSSION
+            ================================================== -->
+
+            <section class="admin-card">
+
+                <h2>
+                    📅 Discussion Details
+                </h2>
+
+                <p class="subtitle">
+                    Manage the next Nexus discussion information.
+                </p>
+
+                <div class="input-group">
+
+                    <label for="discussion">
+                        Next Discussion
+                    </label>
+
+                    <input
+                        type="text"
+                        id="discussion"
+                        placeholder="Coming Soon">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="venue">
+                        Venue
+                    </label>
+
+                    <input
+                        type="text"
+                        id="venue"
+                        placeholder="Machakos, Kenya">
+
+                </div>
+
+
+                <button
+                    id="saveDiscussion"
+                    class="button save-button">
+
+                    Save Discussion Details
+
+                </button>
+
+
+                <div
+                    id="discussionStatus"
+                    class="status">
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FULL INFO
+            ================================================== -->
+
+            <section class="admin-card full info-card">
+
+                <h2>
+                    ☕ Nexus Admin Centre
+                </h2>
+
+                <p>
+                    Changes made here are stored in Firebase Realtime
+                    Database and can be displayed on the public Nexus
+                    Book Club website.
+                </p>
+
+                <br>
+
+                <p>
+                    Read. Reflect. Rise.
+                </p>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
 </div>
 
 
+<!-- =====================================================
+     FIREBASE + ADMIN LOGIC
+===================================================== -->
 
-<nav>
+<script type="module">
 
-<a href="index.html">Home</a>
+    import { app, db, auth }
+        from "./firebase-config.js";
 
-<a href="discussion.html">Discussion</a>
+    import {
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut
+    }
+    from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
-</nav>
+    import {
+        ref,
+        get,
+        set
+    }
+    from "https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
 
 
-</header>
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
 
+    const loginPage =
+        document.getElementById("loginPage");
 
+    const adminPanel =
+        document.getElementById("adminPanel");
 
+    const loginForm =
+        document.getElementById("loginForm");
 
+    const loginError =
+        document.getElementById("loginError");
 
+    const logoutButton =
+        document.getElementById("logoutButton");
 
 
-<main>
+    /* =====================================================
+       AUTHENTICATION
+    ===================================================== */
 
+    onAuthStateChanged(auth, (user) => {
 
-<section class="admin-section">
+        if (user) {
 
+            loginPage.classList.add("hidden");
 
-<div class="container">
+            adminPanel.classList.remove("hidden");
 
+            loadHomepageData();
 
-<h1>Nexus Content Manager</h1>
+        }
 
+        else {
 
-<p>
+            loginPage.classList.remove("hidden");
 
-Update the current reading details and generate your new books.json file.
+            adminPanel.classList.add("hidden");
 
-</p>
+        }
 
+    });
 
 
+    /* =====================================================
+       LOGIN
+    ===================================================== */
 
+    loginForm.addEventListener("submit", async (e) => {
 
+        e.preventDefault();
 
+        loginError.textContent = "";
 
-<div class="admin-card">
+        const email =
+            document.getElementById("email").value.trim();
 
+        const password =
+            document.getElementById("password").value;
 
-<h2>Current Book</h2>
 
+        try {
 
+            await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
 
+        }
 
-<label>
+        catch (error) {
 
-Book Title
+            console.error(error);
 
-</label>
+            loginError.textContent =
+                "Check your email and password.";
 
+        }
 
-<input id="title" value="The Alchemist">
+    });
 
 
+    /* =====================================================
+       LOGOUT
+    ===================================================== */
 
+    logoutButton.addEventListener("click", async () => {
 
+        await signOut(auth);
 
+    });
 
-<label>
 
-Author
+    /* =====================================================
+       LOAD EXISTING DATA
+    ===================================================== */
 
-</label>
+    async function loadHomepageData() {
 
+        try {
 
-<input id="author" value="Paulo Coelho">
+            const homepageRef =
+                ref(db, "nexus/homepage");
 
+            const snapshot =
+                await get(homepageRef);
 
 
+            if (!snapshot.exists()) {
 
+                return;
 
+            }
 
 
-<label>
+            const data =
+                snapshot.val();
 
-Book Cover Path
 
-</label>
+            /* MEMBERS */
 
+            if (data.members !== undefined) {
 
-<input id="cover" value="assets/images/alchemist.jpeg">
+                document.getElementById("members").value =
+                    data.members;
 
+                document.getElementById("memberPreview").textContent =
+                    data.members;
 
+            }
 
 
+            /* CURRENT BOOK */
 
+            if (data.currentBook) {
 
+                const book =
+                    data.currentBook;
 
 
-<label>
+                if (book.title !== undefined) {
 
-Why was this book chosen?
+                    document.getElementById("bookTitle").value =
+                        book.title;
 
-</label>
+                    document.getElementById("bookPreviewTitle").textContent =
+                        book.title;
 
+                }
 
-<textarea id="reason">
 
-We all get so caught up chasing the goal that sometimes we forget its not always about the final destination, but who we become along the way. Hence, The Alchemist. Happy Reading.
+                if (book.author !== undefined) {
 
-</textarea>
+                    document.getElementById("bookAuthor").value =
+                        book.author;
 
+                    document.getElementById("bookPreviewAuthor").textContent =
+                        book.author;
 
+                }
 
 
+                if (book.description !== undefined) {
 
+                    document.getElementById("bookDescription").value =
+                        book.description;
 
+                }
 
-<h2>Meeting Details</h2>
 
+                if (book.progress !== undefined) {
 
+                    document.getElementById("progress").value =
+                        book.progress;
 
-<label>
+                }
 
-Meeting Date
 
-</label>
+                if (book.discussion !== undefined) {
 
+                    document.getElementById("discussion").value =
+                        book.discussion;
 
-<input id="date" value="To be updated">
+                }
 
 
+                if (book.venue !== undefined) {
 
+                    document.getElementById("venue").value =
+                        book.venue;
 
+                }
 
+            }
 
-<label>
+        }
 
-Meeting Time
+        catch (error) {
 
-</label>
+            console.error(
+                "Could not load homepage data:",
+                error
+            );
 
+        }
 
-<input id="time" value="To be updated">
+    }
 
 
+    /* =====================================================
+       SAVE MEMBERS
+    ===================================================== */
 
+    document
+        .getElementById("saveMembers")
+        .addEventListener("click", async () => {
 
+            const members =
+                Number(
+                    document.getElementById("members").value
+                );
 
 
-<label>
+            if (members < 0 || isNaN(members)) {
 
-Meeting Venue
+                showStatus(
+                    "memberStatus",
+                    "Please enter a valid member count.",
+                    false
+                );
 
-</label>
+                return;
 
+            }
 
-<input id="venue" value="Machakos">
 
+            try {
 
+                await set(
+                    ref(db, "nexus/homepage/members"),
+                    members
+                );
 
 
+                document.getElementById(
+                    "memberPreview"
+                ).textContent = members;
 
-<button class="button" onclick="generateJSON()">
 
-Generate books.json
+                showStatus(
+                    "memberStatus",
+                    "Member count saved successfully!",
+                    true
+                );
 
-</button>
+            }
 
+            catch (error) {
 
+                console.error(error);
 
-</div>
+                showStatus(
+                    "memberStatus",
+                    "Could not save member count.",
+                    false
+                );
 
+            }
 
+        });
 
 
+    /* =====================================================
+       SAVE BOOK
+    ===================================================== */
 
+    document
+        .getElementById("saveBook")
+        .addEventListener("click", async () => {
 
+            const title =
+                document.getElementById("bookTitle").value.trim();
 
+            const author =
+                document.getElementById("bookAuthor").value.trim();
 
+            const description =
+                document.getElementById("bookDescription").value.trim();
 
-<div class="admin-card">
 
+            try {
 
-<h2>Generated books.json</h2>
+                await set(
+                    ref(db, "nexus/homepage/currentBook/title"),
+                    title
+                );
 
+                await set(
+                    ref(db, "nexus/homepage/currentBook/author"),
+                    author
+                );
 
+                await set(
+                    ref(db, "nexus/homepage/currentBook/description"),
+                    description
+                );
 
-<textarea id="output" rows="20"></textarea>
 
+                document.getElementById(
+                    "bookPreviewTitle"
+                ).textContent = title || "Current Book";
 
-<p>
 
-Copy the generated text and replace your current books.json file.
+                document.getElementById(
+                    "bookPreviewAuthor"
+                ).textContent = author || "Unknown Author";
 
-</p>
 
+                showStatus(
+                    "bookStatus",
+                    "Book information saved successfully!",
+                    true
+                );
 
+            }
 
-</div>
+            catch (error) {
 
+                console.error(error);
 
+                showStatus(
+                    "bookStatus",
+                    "Could not save book information.",
+                    false
+                );
 
+            }
 
+        });
 
-</div>
 
+    /* =====================================================
+       SAVE PROGRESS
+    ===================================================== */
 
-</section>
+    document
+        .getElementById("saveProgress")
+        .addEventListener("click", async () => {
 
+            const progress =
+                Number(
+                    document.getElementById("progress").value
+                );
 
-</main>
 
+            if (
+                isNaN(progress) ||
+                progress < 0 ||
+                progress > 100
+            ) {
 
+                showStatus(
+                    "progressStatus",
+                    "Enter a percentage between 0 and 100.",
+                    false
+                );
 
+                return;
 
+            }
 
 
+            try {
 
-<footer>
+                await set(
+                    ref(db, "nexus/homepage/currentBook/progress"),
+                    progress
+                );
 
 
-<p>
+                showStatus(
+                    "progressStatus",
+                    "Reading progress saved successfully!",
+                    true
+                );
 
-© Nexus Book Club | Admin Panel
+            }
 
-</p>
+            catch (error) {
 
+                console.error(error);
 
-</footer>
+                showStatus(
+                    "progressStatus",
+                    "Could not save reading progress.",
+                    false
+                );
 
+            }
 
+        });
 
 
+    /* =====================================================
+       SAVE DISCUSSION
+    ===================================================== */
 
+    document
+        .getElementById("saveDiscussion")
+        .addEventListener("click", async () => {
 
+            const discussion =
+                document.getElementById("discussion").value.trim();
 
+            const venue =
+                document.getElementById("venue").value.trim();
 
-<script>
 
+            try {
 
-function generateJSON(){
+                await set(
+                    ref(db, "nexus/homepage/currentBook/discussion"),
+                    discussion
+                );
 
+                await set(
+                    ref(db, "nexus/homepage/currentBook/venue"),
+                    venue
+                );
 
 
-const data = {
+                showStatus(
+                    "discussionStatus",
+                    "Discussion details saved successfully!",
+                    true
+                );
 
+            }
 
-club:{
+            catch (error) {
 
-name:"Nexus Book Club",
+                console.error(error);
 
-location:"Machakos, Kenya",
+                showStatus(
+                    "discussionStatus",
+                    "Could not save discussion details.",
+                    false
+                );
 
-email:"nexusociety254@gmail.com"
+            }
 
-},
+        });
 
 
-currentBook:{
+    /* =====================================================
+       STATUS MESSAGE
+    ===================================================== */
 
+    function showStatus(
+        elementId,
+        message,
+        success
+    ) {
 
-title:document.getElementById("title").value,
+        const element =
+            document.getElementById(elementId);
 
 
-author:document.getElementById("author").value,
+        element.textContent =
+            message;
 
 
-cover:document.getElementById("cover").value,
+        element.className =
+            success
+                ? "status success"
+                : "status error-status";
 
 
-reason:document.getElementById("reason").value,
+        setTimeout(() => {
 
+            element.className =
+                "status";
 
-meeting:{
+        }, 4000);
 
-
-date:document.getElementById("date").value,
-
-
-time:document.getElementById("time").value,
-
-
-venue:document.getElementById("venue").value
-
-
-}
-
-
-},
-
-
-readingStatus:{
-
-
-progress:0,
-
-message:"Currently reading"
-
-},
-
-
-nextBooks:[],
-
-
-announcements:[]
-
-};
-
-
-
-document.getElementById("output").value =
-
-JSON.stringify(data,null,4);
-
-
-
-}
-
+    }
 
 </script>
-
 
 
 </body>
